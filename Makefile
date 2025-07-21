@@ -212,8 +212,8 @@ SRCS		:= \
 	ft_color/ft_color_random.c \
 	ft_color/ft_color_parse.c \
 
-# Or use a wildcard to automatically generate the sources list
-# SRCS		:= $(shell find $(SRC_DIR) -name '*.cpp' -or -name '*.c' -or -name '*.s')
+# Or use a wildcard to generate the sources list automatically
+# SRCS		:= $(shell find $(SRC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.s')
 
 SRCS		:= $(addprefix $(SRC_DIR)/, $(SRCS))
 
@@ -263,7 +263,6 @@ RESET		:= $(shell tput sgr0)
 CLEAR		:= $(shell tput cuu1; tput el)
 TITLE		:= $(YELLOW)$(basename $(NAME))$(RESET)
 
-# 1: action, 2: target, 3: color
 define message
 	$(info [$(TITLE)] $(3)$(1)$(RESET) $(2))
 endef
@@ -284,14 +283,18 @@ endif
 #    Targets                                                                   #
 # **************************************************************************** #
 
+.PHONY: all
 all: $(NAME) ## Build the program
 
+.PHONY: debug
 debug: ## Build the program with debug symbols
 	$(MAKE) WITH_DEBUG=1 all
 
+.PHONY: sanitizer
 sanitizer: ## Build the program with debug symbols and sanitizer
 	$(MAKE) WITH_DEBUG=1 WITH_SANITIZER=1 all
 
+.PHONY: loose
 loose: ## Build the program ignoring warnings
 	$(MAKE) CFLAGS="$(filter-out -Werror,$(CFLAGS))" all
 
@@ -311,19 +314,22 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c # $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 # $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
-	printf $(CLEAR)
+	-printf $(CLEAR)
 	$(call message,CREATED,$(basename $(notdir $@)),$(GREEN))
 
+.PHONY: clean
 clean: ## Remove all generated object files
 	for lib in $(dir $(LIBS)); do $(MAKE) -C $$lib clean; done
 	$(RM) -r $(BUILD_DIR)
 	$(call message,DELETED,$(BUILD_DIR),$(RED))
 
+.PHONY: fclean
 fclean: clean ## Remove all generated files
 	for lib in $(dir $(LIBS)); do $(MAKE) -C $$lib fclean; done
 	$(RM) $(NAME)
 	$(call message,DELETED,$(NAME),$(RED))
 
+.PHONY: re
 re: ## Rebuild the program
 	$(MAKE) fclean
 	$(MAKE) all
@@ -332,36 +338,58 @@ run.%: $(NAME) ## Run the program (usage: make run[.<arguments>])
 	$(call message,RUNNING,./$(NAME) $*,$(CYAN))
 	./$(NAME) $*
 
+.PHONY: run
+.IGNORE: run
 run: $(NAME)
 	$(call message,RUNNING,./$(NAME),$(CYAN))
 	./$(NAME)
 
 valgrind.%: $(NAME) ## Run valgrind on the program (usage: make valgrind[.<arguments>])
 	$(call message,RUNNING,valgrind ./$(NAME) $*,$(CYAN))
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./$(NAME) $*
+	valgrind \
+	--leak-check=full \
+	--show-leak-kinds=all \
+	--track-origins=yes \
+	--track-fds=yes \
+	./$(NAME) $*
 
+.PHONY: valgrind
 valgrind: $(NAME)
 	$(call message,RUNNING,valgrind ./$(NAME),$(CYAN))
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./$(NAME)
+	valgrind \
+	--leak-check=full \
+	--show-leak-kinds=all \
+	--track-origins=yes \
+	--track-fds=yes \
+	./$(NAME)
 
+.PHONY: norm
 norm: ## Check the norm
 	norminette -R CheckForbiddenSourceHeader
 
+.PHONY: format
 format: ## Format the code
-	clang-format -i $(shell find $(SRC_DIR) $(INC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.h')
+	clang-format \
+	-i $(shell find $(SRC_DIR) $(INC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.h' -or -name '*.hpp')
 
+.PHONY: format.norm
 format.norm: ## Format the code according to the norm
-	c_formatter_42 $(shell find $(SRC_DIR) $(INC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.h')
+	c_formatter_42 \
+	$(shell find $(SRC_DIR) $(INC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.h' -or -name '*.hpp')
 
+.PHONY: test
 test: ## TODO: Run the tests
 	$(info $(INFO)TODO$(RESET) Run the tests)
 
+.PHONY: index
 index: ## Generate `compile_commands.json`
 	compiledb --no-build make
 
+.PHONY: docs
 docs: ## Generate the documentation
 	doxygen
 
+.PHONY: update
 update: ## Update the repository and its submodules
 	git stash
 	git pull
@@ -380,9 +408,12 @@ force.%: ## Force execution of a target recipe (usage: make re.<target>)
 docker.%: ## Run a target inside a container (usage: make docker.<target>)
 	docker compose run --rm make $*
 
+.PHONY: version
 version: ## Print the current version of the project
 	$(info $(VERSION))
 
+.PHONY: help
+.IGNORE: help
 help: ## Show this message
 	echo "$(BOLD)$(TITLE)$(RESET) $(GRAY)(v$(VERSION))$(RESET)"
 	echo
@@ -393,9 +424,7 @@ help: ## Show this message
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "%2s$(CYAN)%-20s$(RESET) %s\n", "", $$1, $$2}'
 
 .DEFAULT_GOAL := all
-.PHONY: all debug sanitizer loose clean fclean re run valgrind norm format format.norm index update help
 .SILENT:
-.IGNORE: clean fclean run update help
 .DELETE_ON_ERROR:
 
 -include $(DEPS)
