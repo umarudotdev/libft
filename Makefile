@@ -203,6 +203,34 @@ SRCS		:= \
 	ft_hashmap/ft_hshfind.c \
 	ft_hashmap/ft_hshexpand.c \
 	\
+	ft_option/ft_option_none.c \
+	ft_option/ft_option_some.c \
+	ft_option/ft_option_is_none.c \
+	ft_option/ft_option_is_some.c \
+	ft_option/ft_option_unwrap.c \
+	ft_option/ft_option_unwrap_or.c \
+	ft_option/ft_option_map.c \
+	ft_option/ft_option_and_then.c \
+	ft_option/ft_option_ok_or.c \
+	ft_option/ft_option_ok_or_else.c \
+	ft_option/ft_option_filter.c \
+	ft_option/ft_option_expect.c \
+	ft_option/ft_option_from_ptr.c \
+	\
+	ft_result/ft_result_ok.c \
+	ft_result/ft_result_err.c \
+	ft_result/ft_result_is_ok.c \
+	ft_result/ft_result_is_err.c \
+	ft_result/ft_result_unwrap.c \
+	ft_result/ft_result_unwrap_or.c \
+	ft_result/ft_result_unwrap_err.c \
+	ft_result/ft_result_map.c \
+	ft_result/ft_result_map_err.c \
+	ft_result/ft_result_and_then.c \
+	ft_result/ft_result_or_else.c \
+	ft_result/ft_result_expect.c \
+	ft_result/ft_result_from_ptr.c \
+	\
 	ft_color/ft_color.c \
 	ft_color/ft_color_rgb.c \
 	ft_color/ft_color_rgba.c \

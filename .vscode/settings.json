@@ -1,0 +1,10 @@
+{
+	"editor.defaultFormatter": "keyhr.42-c-format",
+	"files.associations": {
+		"ft_option.h": "c",
+		"ft_result.h": "c"
+	},
+	"[c]": {
+		"editor.defaultFormatter": "keyhr.42-c-format"
+	}
+}
