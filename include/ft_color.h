@@ -13,6 +13,7 @@
 #ifndef FT_COLOR_H
 # define FT_COLOR_H
 
+# include "ft_option.h"
 # include <math.h>
 # include <stdbool.h>
 # include <stdint.h>
@@ -44,12 +45,6 @@ typedef union u_color
 	};
 }				t_color;
 
-typedef struct s_color_result
-{
-	t_color		color;
-	bool		error;
-}				t_color_result;
-
 t_color			ft_color(uint32_t v);
 t_color			ft_color_rgb(uint8_t r, uint8_t g, uint8_t b);
 t_color			ft_color_rgba(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
@@ -57,6 +52,7 @@ t_color			ft_color_opacity(t_color c, float_t opacity);
 t_color			ft_color_grayscale(t_color c);
 t_color			ft_color_lerp(t_color a, t_color b, float_t t);
 t_color			ft_color_random(void);
-t_color_result	ft_color_parse(const char *str);
+t_option		ft_color_parse_rgb(const char *str);
+t_option		ft_color_parse_hex(const char *str);
 
 #endif

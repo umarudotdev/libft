@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_color.h"
+#include "ft_option.h"
 #include "ft_stdio.h"
 #include <stdbool.h>
 #include <unistd.h>
@@ -19,14 +20,11 @@
  * @brief TODO: Parses a color from a string.
  *
  * @param str The string to parse.
- * @return A `t_color_result` structure with the parsed color and an error flag.
+ * @return A `t_option` containing the parsed color, or none if parsing failed.
  */
-t_color_result	ft_color_parse(const char *str __attribute__((unused)))
+t_option	ft_color_parse_hex(const char *str __attribute__((unused)))
 {
 	ft_putstr_fd((char *)__func__, STDERR_FILENO);
 	ft_putendl_fd(" is not implemented yet", STDERR_FILENO);
-	return ((t_color_result){
-		.color.value = 0,
-		.error = true,
-	});
+	return (ft_option_none());
 }
