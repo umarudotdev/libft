@@ -12,7 +12,10 @@
 
 NAME		:= libft.a
 
-VERSION		:= $(shell grep -oP 'LIBFT_VERSION "\K[^"]+' include/libft.h)
+VERSION_MAJOR	:= $(shell grep -oP 'LIBFT_VERSION_MAJOR \K[0-9]+' include/libft.h)
+VERSION_MINOR	:= $(shell grep -oP 'LIBFT_VERSION_MINOR \K[0-9]+' include/libft.h)
+VERSION_PATCH	:= $(shell grep -oP 'LIBFT_VERSION_PATCH \K[0-9]+' include/libft.h)
+VERSION			:= $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH)
 
 # **************************************************************************** #
 #    Dependencies                                                              #
@@ -203,6 +206,34 @@ SRCS		:= \
 	ft_hashmap/ft_hshfind.c \
 	ft_hashmap/ft_hshexpand.c \
 	\
+	ft_option/ft_option_none.c \
+	ft_option/ft_option_some.c \
+	ft_option/ft_option_is_none.c \
+	ft_option/ft_option_is_some.c \
+	ft_option/ft_option_and_then.c \
+	ft_option/ft_option_map.c \
+	ft_option/ft_option_filter.c \
+	ft_option/ft_option_ok_or.c \
+	ft_option/ft_option_expect.c \
+	ft_option/ft_option_unwrap.c \
+	ft_option/ft_option_unwrap_or.c \
+	ft_option/ft_option_from_ptr.c \
+	\
+	ft_result/ft_result_ok.c \
+	ft_result/ft_result_err.c \
+	ft_result/ft_result_is_ok.c \
+	ft_result/ft_result_is_err.c \
+	ft_result/ft_result_and_then.c \
+	ft_result/ft_result_map.c \
+	ft_result/ft_result_map_err.c \
+	ft_result/ft_result_ok_option.c \
+	ft_result/ft_result_or_else.c \
+	ft_result/ft_result_expect.c \
+	ft_result/ft_result_unwrap.c \
+	ft_result/ft_result_unwrap_or.c \
+	ft_result/ft_result_unwrap_err.c \
+	ft_result/ft_result_from_ptr.c \
+	\
 	ft_color/ft_color.c \
 	ft_color/ft_color_rgb.c \
 	ft_color/ft_color_rgba.c \
@@ -210,7 +241,8 @@ SRCS		:= \
 	ft_color/ft_color_grayscale.c \
 	ft_color/ft_color_lerp.c \
 	ft_color/ft_color_random.c \
-	ft_color/ft_color_parse.c \
+	ft_color/ft_color_parse_rgb.c \
+	ft_color/ft_color_parse_hex.c \
 
 # Or use a wildcard to generate the sources list automatically
 # SRCS		:= $(shell find $(SRC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.s')

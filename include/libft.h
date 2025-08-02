@@ -16,20 +16,19 @@
 # define LIBFT_VERSION_MAJOR 0
 # define LIBFT_VERSION_MINOR 0
 # define LIBFT_VERSION_PATCH 1
-# define LIBFT_VERSION "0.0.1"
 
-# ifdef LIBFT_INCLUDE_ALL
-#  include "ft_ansi.h"
-#  include "ft_arraylist.h"
-#  include "ft_color.h"
-#  include "ft_ctype.h"
-#  include "ft_hashmap.h"
-#  include "ft_linkedlist.h"
-#  include "ft_queue.h"
-#  include "ft_stack.h"
-#  include "ft_stdio.h"
-#  include "ft_stdlib.h"
-#  include "ft_string.h"
-# endif
+# include "ft_ansi.h"
+# include "ft_arraylist.h"
+# include "ft_color.h"
+# include "ft_ctype.h"
+# include "ft_hashmap.h"
+# include "ft_linkedlist.h"
+# include "ft_option.h"
+# include "ft_queue.h"
+# include "ft_result.h"
+# include "ft_stack.h"
+# include "ft_stdio.h"
+# include "ft_stdlib.h"
+# include "ft_string.h"
 
 #endif
