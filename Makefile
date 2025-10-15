@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= libft.a
+NAME			:= libft.a
 
 VERSION_MAJOR	:= $(shell grep -oP 'LIBFT_VERSION_MAJOR \K[0-9]+' include/libft.h)
 VERSION_MINOR	:= $(shell grep -oP 'LIBFT_VERSION_MINOR \K[0-9]+' include/libft.h)
@@ -21,21 +21,21 @@ VERSION			:= $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH)
 #    Dependencies                                                              #
 # **************************************************************************** #
 
-LIBS		:= \
+LIBS			:= \
 
-INC_DIR		:= include
+INC_DIR			:= include
 
-INCS		:= \
+INCS			:= \
 	$(INC_DIR) \
 
 # **************************************************************************** #
 #    Sources                                                                   #
 # **************************************************************************** #
 
-SRC_DIR		:= src
+SRC_DIR			:= src
 
 # List all source files according to the 42 norm
-SRCS		:= \
+SRCS			:= \
 	ft_ctype/ft_isupper.c \
 	ft_ctype/ft_islower.c \
 	ft_ctype/ft_isalpha.c \
@@ -247,68 +247,100 @@ SRCS		:= \
 # Or use a wildcard to generate the sources list automatically
 # SRCS		:= $(shell find $(SRC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.s')
 
-SRCS		:= $(addprefix $(SRC_DIR)/,$(SRCS))
+SRCS			:= $(addprefix $(SRC_DIR)/,$(SRCS))
 
 # **************************************************************************** #
 #    Build                                                                     #
 # **************************************************************************** #
 
-BUILD_DIR	:= build
+BUILD_DIR		:= build
 
-OBJS		:= $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
-DEPS		:= $(OBJS:.o=.d)
+OBJS			:= $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
+DEPS			:= $(OBJS:.o=.d)
 
-CC			:= cc
-CFLAGS		:= -std=c11 -Wall -Wextra -Werror -pedantic
+CC				:= cc
+CFLAGS			:= -std=c11 -Wall -Wextra -Werror -pedantic
 
-CXX			:= c++
-CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror -pedantic
+CXX				:= c++
+CXXFLAGS		:= -std=c++98 -Wall -Wextra -Werror -pedantic
 
-CPPFLAGS	:= $(addprefix -I,$(INCS)) -MMD -MP
-LDFLAGS		:= $(addprefix -L,$(dir $(LIBS)))
-LDLIBS		:= -lft
+CPPFLAGS		:= $(addprefix -I,$(INCS)) -MMD -MP
+LDFLAGS			:= $(addprefix -L,$(dir $(LIBS)))
+LDLIBS			:= -lft
 
-AR			:= ar
-ARFLAGS		:= -r -c -s
+AR				:= ar
+ARFLAGS			:= -r -c -s
 
 # **************************************************************************** #
 #    Misc                                                                      #
 # **************************************************************************** #
 
-RM			:= rm -f
-MAKEFLAGS	+= --no-print-directory
+RM				:= rm -f
+MAKEFLAGS		+= --no-print-directory
 
-RED			:= $(shell tput setaf 1)
-GREEN		:= $(shell tput setaf 2)
-YELLOW		:= $(shell tput setaf 3)
-BLUE		:= $(shell tput setaf 4)
-MAGENTA		:= $(shell tput setaf 5)
-CYAN		:= $(shell tput setaf 6)
-WHITE		:= $(shell tput setaf 7)
-GRAY		:= $(shell tput setaf 8)
-ERROR		:= $(shell tput setab 1)$(WHITE)
-SUCCESS		:= $(shell tput setab 2)$(WHITE)
-WARNING		:= $(shell tput setab 3)$(WHITE)
-INFO		:= $(shell tput setab 4)$(WHITE)
-BOLD		:= $(shell tput bold)
-RESET		:= $(shell tput sgr0)
-CLEAR		:= $(shell tput cuu1; tput el)
-TITLE		:= $(YELLOW)$(basename $(NAME))$(RESET)
+ANSI.RED		:= $(shell tput setaf 1)
+ANSI.GREEN		:= $(shell tput setaf 2)
+ANSI.YELLOW		:= $(shell tput setaf 3)
+ANSI.BLUE		:= $(shell tput setaf 4)
+ANSI.MAGENTA	:= $(shell tput setaf 5)
+ANSI.CYAN		:= $(shell tput setaf 6)
+ANSI.WHITE		:= $(shell tput setaf 7)
+ANSI.GRAY		:= $(shell tput setaf 8)
+ANSI.ERROR		:= $(ANSI.RED)
+ANSI.SUCCESS	:= $(ANSI.GREEN)
+ANSI.WARNING	:= $(ANSI.YELLOW)
+ANSI.INFO		:= $(ANSI.BLUE)
+ANSI.BOLD		:= $(shell tput bold)
+ANSI.RESET		:= $(shell tput sgr0)
+ANSI.CLEAR		:= $(shell tput cuu1; tput el)
 
-define message
-	$(info [$(TITLE)] $(3)$(1)$(RESET) $(2))
+define log
+	@level="$(1)"; \
+	message="$(2)"; \
+	timestamp=$$(date '+%H:%M:%S'); \
+	level_upper=$$(echo "$$level" | tr '[:lower:]' '[:upper:]'); \
+	level_lower=$$(echo "$$level" | tr '[:upper:]' '[:lower:]'); \
+	case "$$level_lower" in \
+		success | created) color="$(ANSI.SUCCESS)" ;; \
+		warn) color="$(ANSI.WARNING)" ;; \
+		error | deleted) color="$(ANSI.ERROR)" ;; \
+		info | running | testing) color="$(ANSI.INFO)" ;; \
+		*) color="$(ANSI.GRAY)" ;; \
+	esac; \
+	printf "$(ANSI.GRAY)[$$timestamp]$(ANSI.RESET) [$(ANSI.BOLD)$${color}$$level_upper$(ANSI.RESET)] $$message\n"
 endef
 
-ifdef WITH_DEBUG
-	TITLE	+= $(MAGENTA)debug$(RESET)
-	CFLAGS	+= -g3
+define show_progress
+	@current=$$(find $(BUILD_DIR) -name '*.o' | wc -l | tr -d ' '); \
+	total=$(words $(SRCS)); \
+	percent=$$(($$current * 100 / $$total)); \
+	term_width=$$(tput cols || echo 80); \
+	bar_width=$$(($$term_width - 30)); \
+	if [ $$bar_width -lt 60 ]; then bar_width=20; fi; \
+	if [ $$bar_width -ge 60 ]; then bar_width=30; fi; \
+	bar_width=$$(($$bar_width - 2)); \
+	filled=$$(($$bar_width * $$percent / 100)); \
+	empty=$$(($$bar_width - $$filled)); \
+	printf "\r$(ANSI.GRAY)[$(ANSI.CYAN)"; \
+	printf '%*s' $$filled | tr ' ' '='; \
+	printf "$(ANSI.GRAY)"; \
+	printf '%*s' $$empty | tr ' ' '-'; \
+	printf "$(ANSI.GRAY)]$(ANSI.RESET) "; \
+	printf "$(ANSI.BOLD)%3d%%$(ANSI.RESET) " "$$percent"; \
+	printf "$(ANSI.GRAY)(%-3s/%-3s)$(ANSI.RESET) " "$$current" "$$total"; \
+	printf "$(ANSI.GREEN)%-20s$(ANSI.RESET)" "$(1)"; \
+	tput el; \
+	if [ "$$current" -eq "$$total" ]; then printf "\n"; fi
+endef
+
+ifdef DEBUG
+	CFLAGS		+= -g3
 else
-	CFLAGS	+= -O3
+	CFLAGS		+= -O3
 endif
 
-ifdef WITH_SANITIZER
-	TITLE	+= $(MAGENTA)sanitizer$(RESET)
-	CFLAGS	+= -fsanitize=address,undefined
+ifdef SANITIZE
+	CFLAGS		+= -fsanitize=address,undefined
 endif
 
 # **************************************************************************** #
@@ -320,11 +352,11 @@ all: $(NAME) ## Build the program
 
 .PHONY: debug
 debug: ## Build the program with debug symbols
-	$(MAKE) WITH_DEBUG=1 all
+	$(MAKE) DEBUG=1 all
 
-.PHONY: sanitizer
-sanitizer: ## Build the program with debug symbols and sanitizer
-	$(MAKE) WITH_DEBUG=1 WITH_SANITIZER=1 all
+.PHONY: sanitize
+sanitize: ## Build the program with debug symbols and sanitizer
+	$(MAKE) DEBUG=1 SANITIZE=1 all
 
 .PHONY: loose
 loose: ## Build the program ignoring warnings
@@ -336,7 +368,7 @@ $(NAME): $(LIBS) $(OBJS)
 # Or link the C/C++ objects into a final executable
 # $(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $(NAME)
 # $(CXX) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $(NAME)
-	$(call message,CREATED,$(NAME),$(BLUE))
+	$(call log,created,$(NAME))
 
 $(LIBS):
 	$(MAKE) -C $(@D) -j4
@@ -345,21 +377,20 @@ $(LIBS):
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c # $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+	$(call show_progress,$(basename $(notdir $@)))
 # $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
-	-printf $(CLEAR)
-	$(call message,CREATED,$(basename $(notdir $@)),$(GREEN))
 
 .PHONY: clean
 clean: ## Remove all generated object files
 	for lib in $(dir $(LIBS)); do $(MAKE) -C $$lib clean; done
 	$(RM) -r $(BUILD_DIR)
-	$(call message,DELETED,$(BUILD_DIR),$(RED))
+	$(call log,deleted,$(BUILD_DIR))
 
 .PHONY: fclean
 fclean: clean ## Remove all generated files
 	for lib in $(dir $(LIBS)); do $(MAKE) -C $$lib fclean; done
 	$(RM) $(NAME)
-	$(call message,DELETED,$(NAME),$(RED))
+	$(call log,deleted,$(NAME))
 
 .PHONY: re
 re: ## Rebuild the program
@@ -367,17 +398,17 @@ re: ## Rebuild the program
 	$(MAKE) all
 
 run.%: $(NAME) ## Run the program (usage: make run[.<arguments>])
-	$(call message,RUNNING,./$(NAME) $*,$(CYAN))
+	$(call log,running,./$(NAME) $*)
 	./$(NAME) $*
 
 .PHONY: run
 .IGNORE: run
 run: $(NAME)
-	$(call message,RUNNING,./$(NAME),$(CYAN))
+	$(call log,running,./$(NAME))
 	./$(NAME)
 
 valgrind.%: $(NAME) ## Run valgrind on the program (usage: make valgrind[.<arguments>])
-	$(call message,RUNNING,valgrind ./$(NAME) $*,$(CYAN))
+	$(call message,running,valgrind ./$(NAME) $*,$(CYAN))
 	valgrind \
 	--leak-check=full \
 	--show-leak-kinds=all \
@@ -387,7 +418,7 @@ valgrind.%: $(NAME) ## Run valgrind on the program (usage: make valgrind[.<argum
 
 .PHONY: valgrind
 valgrind: $(NAME)
-	$(call message,RUNNING,valgrind ./$(NAME),$(CYAN))
+	$(call log,running,valgrind ./$(NAME))
 	valgrind \
 	--leak-check=full \
 	--show-leak-kinds=all \
@@ -411,7 +442,8 @@ format.norm: ## Format the code according to the norm
 
 .PHONY: test
 test: ## TODO: Run the tests
-	$(info $(INFO)TODO$(RESET) Run the tests)
+	$(call log,testing,$(NAME))
+	$(call log,error,Running tests)
 
 .PHONY: index
 index: ## Generate `compile_commands.json`
@@ -447,13 +479,13 @@ version: ## Print the current version of the project
 .PHONY: help
 .IGNORE: help
 help: ## Show this message
-	echo "$(BOLD)$(TITLE)$(RESET) $(GRAY)(v$(VERSION))$(RESET)"
+	echo "$(ANSI.BOLD)$(ANSI.YELLOW)$(NAME)$(ANSI.RESET) $(ANSI.GRAY)(v$(VERSION))$(ANSI.RESET)"
 	echo
-	echo "$(BOLD)Usage: make [<name>=<value>...]$(RESET) $(BOLD)$(CYAN)[target...]$(RESET)"
+	echo "$(ANSI.BOLD)Usage: make [<name>=<value>...]$(ANSI.RESET) $(ANSI.BOLD)$(ANSI.CYAN)[target...]$(ANSI.RESET)"
 	echo
-	echo "$(BOLD)Targets:$(RESET)"
+	echo "$(ANSI.BOLD)Targets:$(ANSI.RESET)"
 	grep -E '^[a-zA-Z_.%-]+:.*?## .*$$' Makefile \
-	| awk 'BEGIN {FS = ":.*?## "}; {printf "%2s$(CYAN)%-20s$(RESET) %s\n", "", $$1, $$2}'
+	| awk 'BEGIN {FS = ":.*?## "}; {printf "%2s$(ANSI.CYAN)%-20s$(ANSI.RESET) %s\n", "", $$1, $$2}'
 
 .DEFAULT_GOAL := all
 .SILENT:
