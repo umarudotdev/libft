@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arena.h                                         :+:      :+:    :+:   */
+/*   ft_strjoin_opt.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ARENA_H
-# define FT_ARENA_H
+#include "ft_option.h"
+#include "ft_string.h"
 
-# include <stddef.h>
-
-typedef struct s_arena	t_arena;
-typedef struct s_option	t_option;
-
-t_arena					*ft_arena_new(size_t block_size);
-void					*ft_arena_alloc(t_arena *arena, size_t size);
-void					*ft_arena_calloc(t_arena *arena, size_t size);
-void					ft_arena_reset(t_arena *arena);
-void					ft_arena_free(t_arena *arena);
-
-t_option				ft_arena_new_opt(size_t block_size);
-t_option				ft_arena_alloc_opt(t_arena *arena, size_t size);
-t_option				ft_arena_calloc_opt(t_arena *arena, size_t size);
-
-#endif
+/**
+ * @brief Joins two strings, returning an Option.
+ *
+ * This is a safe wrapper around ft_strjoin that returns an Option type
+ * for better error handling.
+ *
+ * @param s1 The prefix string.
+ * @param s2 The suffix string.
+ * @return A Some(joined_string) if successful, None if allocation fails.
+ *
+ * @example
+ *   t_option opt = ft_strjoin_opt("hello", " world");
+ *   char *result = ft_option_expect(opt, "join failed");
+ */
+t_option	ft_strjoin_opt(char const *s1, char const *s2)
+{
+	return (ft_option_from_ptr(ft_strjoin(s1, s2)));
+}

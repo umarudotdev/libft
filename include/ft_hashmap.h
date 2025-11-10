@@ -47,4 +47,9 @@ bool						ft_hshnext(t_hashmap_iterator *it);
 void						ft_hsheach(t_hashmap *hsh,
 								void (*f)(const char *key, void *value));
 
+typedef struct s_option		t_option;
+
+t_option					ft_hshnew_opt(t_hash_func hash);
+t_option					ft_hshget_opt(const t_hashmap *hsh, const char *key);
+
 #endif

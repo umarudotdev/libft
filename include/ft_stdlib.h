@@ -32,4 +32,11 @@ size_t		ft_setrange(ssize_t *start, ssize_t *end, size_t len);
 void		ft_panic(const char *message) __attribute__((noreturn));
 void		*ft_expect(void *ptr, const char *message);
 
+typedef struct s_option	t_option;
+typedef struct s_result	t_result;
+
+t_option	ft_calloc_opt(size_t nmemb, size_t size);
+t_result	ft_atoi_result(const char *nptr);
+t_result	ft_atoll_result(const char *nptr);
+
 #endif

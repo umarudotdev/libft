@@ -32,4 +32,10 @@ void					ft_arrdel(t_array *arr, size_t index);
 void					ft_arrclear(t_array *arr);
 t_array					*ft_arrexpand(t_array *arr, size_t size);
 
+typedef struct s_option	t_option;
+
+t_option				ft_arrnew_opt(size_t size);
+t_option				ft_arrappend_opt(t_array *arr, const void *new);
+t_option				ft_arrat_opt(const t_array *arr, size_t index);
+
 #endif

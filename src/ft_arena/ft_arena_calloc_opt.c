@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arena.h                                         :+:      :+:    :+:   */
+/*   ft_arena_calloc_opt.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ARENA_H
-# define FT_ARENA_H
+#include "ft_arena.h"
+#include "ft_option.h"
 
-# include <stddef.h>
-
-typedef struct s_arena	t_arena;
-typedef struct s_option	t_option;
-
-t_arena					*ft_arena_new(size_t block_size);
-void					*ft_arena_alloc(t_arena *arena, size_t size);
-void					*ft_arena_calloc(t_arena *arena, size_t size);
-void					ft_arena_reset(t_arena *arena);
-void					ft_arena_free(t_arena *arena);
-
-t_option				ft_arena_new_opt(size_t block_size);
-t_option				ft_arena_alloc_opt(t_arena *arena, size_t size);
-t_option				ft_arena_calloc_opt(t_arena *arena, size_t size);
-
-#endif
+/**
+ * @brief Allocates zeroed memory from the arena, returning an Option.
+ *
+ * This is a safe wrapper around ft_arena_calloc that returns an Option type
+ * for better error handling.
+ *
+ * @param arena The arena to allocate from.
+ * @param size The number of bytes to allocate.
+ * @return A Some(ptr) if successful, None if allocation fails.
+ */
+t_option	ft_arena_calloc_opt(t_arena *arena, size_t size)
+{
+	return (ft_option_from_ptr(ft_arena_calloc(arena, size)));
+}

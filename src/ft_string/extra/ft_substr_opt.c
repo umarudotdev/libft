@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arena.h                                         :+:      :+:    :+:   */
+/*   ft_substr_opt.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ARENA_H
-# define FT_ARENA_H
+#include "ft_option.h"
+#include "ft_string.h"
 
-# include <stddef.h>
-
-typedef struct s_arena	t_arena;
-typedef struct s_option	t_option;
-
-t_arena					*ft_arena_new(size_t block_size);
-void					*ft_arena_alloc(t_arena *arena, size_t size);
-void					*ft_arena_calloc(t_arena *arena, size_t size);
-void					ft_arena_reset(t_arena *arena);
-void					ft_arena_free(t_arena *arena);
-
-t_option				ft_arena_new_opt(size_t block_size);
-t_option				ft_arena_alloc_opt(t_arena *arena, size_t size);
-t_option				ft_arena_calloc_opt(t_arena *arena, size_t size);
-
-#endif
+/**
+ * @brief Extracts a substring, returning an Option.
+ *
+ * This is a safe wrapper around ft_substr that returns an Option type
+ * for better error handling.
+ *
+ * @param s The string from which to create the substring.
+ * @param start The start index of the substring in the string 's'.
+ * @param len The maximum length of the substring.
+ * @return A Some(substring) if successful, None if allocation fails.
+ *
+ * @example
+ *   t_option opt = ft_substr_opt("hello world", 0, 5);
+ *   char *sub = ft_option_unwrap_or(opt, "");
+ */
+t_option	ft_substr_opt(char const *s, unsigned int start, size_t len)
+{
+	return (ft_option_from_ptr(ft_substr(s, start, len)));
+}

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arena.h                                         :+:      :+:    :+:   */
+/*   ft_arrat_opt.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ARENA_H
-# define FT_ARENA_H
+#include "ft_arraylist.h"
+#include "ft_option.h"
 
-# include <stddef.h>
-
-typedef struct s_arena	t_arena;
-typedef struct s_option	t_option;
-
-t_arena					*ft_arena_new(size_t block_size);
-void					*ft_arena_alloc(t_arena *arena, size_t size);
-void					*ft_arena_calloc(t_arena *arena, size_t size);
-void					ft_arena_reset(t_arena *arena);
-void					ft_arena_free(t_arena *arena);
-
-t_option				ft_arena_new_opt(size_t block_size);
-t_option				ft_arena_alloc_opt(t_arena *arena, size_t size);
-t_option				ft_arena_calloc_opt(t_arena *arena, size_t size);
-
-#endif
+/**
+ * @brief Gets an element at index, returning an Option.
+ *
+ * This is a safe wrapper around ft_arrat that returns an Option type
+ * for better bounds checking and error handling.
+ *
+ * @param arr The array to access.
+ * @param index The index of the element.
+ * @return A Some(element_ptr) if index is valid, None if out of bounds.
+ *
+ * @example
+ *   t_option opt = ft_arrat_opt(arr, 5);
+ *   int *value = ft_option_unwrap_or(opt, &default_value);
+ */
+t_option	ft_arrat_opt(const t_array *arr, size_t index)
+{
+	if (!arr || index >= ft_arrsize(arr))
+		return (ft_option_none());
+	return (ft_option_from_ptr(ft_arrat(arr, index)));
+}

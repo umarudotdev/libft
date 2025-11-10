@@ -87,4 +87,12 @@ t_string		ft_stnjoin_range(const t_array *arr, const char *s,
 t_string		ft_stnexpand(t_string s, size_t size);
 t_string		ft_stncontract(t_string s);
 
+typedef struct s_option	t_option;
+
+t_option		ft_strdup_opt(const char *s);
+t_option		ft_substr_opt(char const *s, unsigned int start, size_t len);
+t_option		ft_split_opt(char const *s, char c);
+t_option		ft_strjoin_opt(char const *s1, char const *s2);
+t_option		ft_strtrim_opt(char const *s1, char const *set);
+
 #endif

@@ -67,6 +67,11 @@ SRCS			:= \
 	ft_string/extra/ft_freesplit.c \
 	ft_string/extra/ft_strmapi.c \
 	ft_string/extra/ft_striteri.c \
+	ft_string/extra/ft_strdup_opt.c \
+	ft_string/extra/ft_substr_opt.c \
+	ft_string/extra/ft_split_opt.c \
+	ft_string/extra/ft_strjoin_opt.c \
+	ft_string/extra/ft_strtrim_opt.c \
 	ft_string/extra/ft_strcount.c \
 	ft_string/extra/ft_strall.c \
 	ft_string/extra/ft_stnnew.c \
@@ -128,6 +133,9 @@ SRCS			:= \
 	ft_stdlib/extra/ft_setrange.c \
 	ft_stdlib/extra/ft_panic.c \
 	ft_stdlib/extra/ft_expect.c \
+	ft_stdlib/extra/ft_calloc_opt.c \
+	ft_stdlib/extra/ft_atoi_result.c \
+	ft_stdlib/extra/ft_atoll_result.c \
 	\
 	ft_stdio/extra/ft_putchar_fd.c \
 	ft_stdio/extra/ft_putchar.c \
@@ -167,6 +175,9 @@ SRCS			:= \
 	ft_arraylist/ft_arrdel.c \
 	ft_arraylist/ft_arrclear.c \
 	ft_arraylist/ft_arrexpand.c \
+	ft_arraylist/ft_arrnew_opt.c \
+	ft_arraylist/ft_arrappend_opt.c \
+	ft_arraylist/ft_arrat_opt.c \
 	\
 	ft_stack/ft_stknew.c \
 	ft_stack/ft_stkfree.c \
@@ -202,6 +213,8 @@ SRCS			:= \
 	ft_hashmap/ft_hshhash.c \
 	ft_hashmap/ft_hshfind.c \
 	ft_hashmap/ft_hshexpand.c \
+	ft_hashmap/ft_hshnew_opt.c \
+	ft_hashmap/ft_hshget_opt.c \
 	\
 	ft_option/ft_option_none.c \
 	ft_option/ft_option_some.c \
@@ -246,6 +259,9 @@ SRCS			:= \
 	ft_arena/ft_arena_calloc.c \
 	ft_arena/ft_arena_reset.c \
 	ft_arena/ft_arena_free.c \
+	ft_arena/ft_arena_new_opt.c \
+	ft_arena/ft_arena_alloc_opt.c \
+	ft_arena/ft_arena_calloc_opt.c \
 
 # Or use a wildcard to generate the sources list automatically
 # SRCS		:= $(shell find $(SRC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.s')
