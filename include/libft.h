@@ -20,6 +20,7 @@
 
 # ifdef LIBFT_INCLUDE_ALL
 #  include "ft_ansi.h"
+#  include "ft_arena.h"
 #  include "ft_arraylist.h"
 #  include "ft_color.h"
 #  include "ft_ctype.h"

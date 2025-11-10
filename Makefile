@@ -240,6 +240,12 @@ SRCS			:= \
 	ft_color/ft_color_random.c \
 	ft_color/ft_color_parse_rgb.c \
 	ft_color/ft_color_parse_hex.c \
+	\
+	ft_arena/ft_arena_new.c \
+	ft_arena/ft_arena_alloc.c \
+	ft_arena/ft_arena_calloc.c \
+	ft_arena/ft_arena_reset.c \
+	ft_arena/ft_arena_free.c \
 
 # Or use a wildcard to generate the sources list automatically
 # SRCS		:= $(shell find $(SRC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.s')
