@@ -16,6 +16,7 @@
 # include <stdbool.h>
 
 typedef struct s_option	t_option;
+typedef struct s_error	t_error;
 
 typedef struct s_result
 {
@@ -46,5 +47,8 @@ void					*ft_result_unwrap_or(t_result result,
 							const void *default_value);
 void					*ft_result_unwrap_err(t_result result);
 t_result				ft_result_from_ptr(const void *ptr);
+
+t_result				ft_result_err_error(t_error error);
+t_error					*ft_result_error(t_result result);
 
 #endif

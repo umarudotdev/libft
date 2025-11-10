@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_ctype.h"
+#include "ft_error.h"
 #include "ft_result.h"
 #include "ft_stdlib.h"
 #include <limits.h>
@@ -43,7 +44,7 @@ t_result	ft_atoll_result(const char *nptr)
 	t_result			overflow_check;
 
 	if (!nptr)
-		return (ft_result_err("NULL pointer"));
+		return (ft_result_err_error(FT_ERROR_NULL("ft_atoll_result")));
 	i = 0;
 	while (ft_isspace(nptr[i]))
 		i++;
@@ -51,7 +52,7 @@ t_result	ft_atoll_result(const char *nptr)
 	if (nptr[i] == '+' || nptr[i] == '-')
 		sign = (nptr[i++] == '-') ? -1 : 1;
 	if (!ft_isdigit(nptr[i]))
-		return (ft_result_err("No digits found"));
+		return (ft_result_err_error(FT_ERROR_PARSE("No digits found in input")));
 	res = 0;
 	while (ft_isdigit(nptr[i]))
 	{
@@ -85,8 +86,8 @@ static t_result	check_overflow(unsigned long long res, int sign, char next)
 	else
 		max_val = -(unsigned long long)LLONG_MIN;
 	if (res > max_val / BASE)
-		return (ft_result_err("Integer overflow"));
+		return (ft_result_err_error(FT_ERROR_OVERFLOW("Long long value")));
 	if (res == max_val / BASE && next_digit > max_val % BASE)
-		return (ft_result_err("Integer overflow"));
+		return (ft_result_err_error(FT_ERROR_OVERFLOW("Long long value")));
 	return (ft_result_ok(NULL));
 }

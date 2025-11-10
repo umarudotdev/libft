@@ -24,6 +24,7 @@
 #  include "ft_arraylist.h"
 #  include "ft_color.h"
 #  include "ft_ctype.h"
+#  include "ft_error.h"
 #  include "ft_hashmap.h"
 #  include "ft_linkedlist.h"
 #  include "ft_option.h"

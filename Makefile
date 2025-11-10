@@ -243,6 +243,16 @@ SRCS			:= \
 	ft_result/ft_result_unwrap_or.c \
 	ft_result/ft_result_unwrap_err.c \
 	ft_result/ft_result_from_ptr.c \
+	ft_result/ft_result_err_error.c \
+	ft_result/ft_result_error.c \
+	\
+	ft_error/ft_error_new.c \
+	ft_error/ft_error_with_context.c \
+	ft_error/ft_error_with_location.c \
+	ft_error/ft_error_kind_str.c \
+	ft_error/ft_error_message.c \
+	ft_error/ft_error_print.c \
+	ft_error/ft_error_print_fd.c \
 	\
 	ft_color/ft_color.c \
 	ft_color/ft_color_rgb.c \

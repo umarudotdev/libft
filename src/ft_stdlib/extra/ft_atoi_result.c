@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_ctype.h"
+#include "ft_error.h"
 #include "ft_result.h"
 #include "ft_stdlib.h"
 #include <limits.h>
@@ -48,7 +49,7 @@ t_result	ft_atoi_result(const char *nptr)
 	size_t		i;
 
 	if (!nptr)
-		return (ft_result_err("NULL pointer"));
+		return (ft_result_err_error(FT_ERROR_NULL("ft_atoi_result")));
 	i = 0;
 	while (ft_isspace(nptr[i]))
 		i++;
@@ -56,13 +57,13 @@ t_result	ft_atoi_result(const char *nptr)
 	if (nptr[i] == '+' || nptr[i] == '-')
 		sign = (nptr[i++] == '-') ? -1 : 1;
 	if (!ft_isdigit(nptr[i]))
-		return (ft_result_err("No digits found"));
+		return (ft_result_err_error(FT_ERROR_PARSE("No digits found in input")));
 	res = 0;
 	while (ft_isdigit(nptr[i]))
 	{
 		res = res * BASE + (nptr[i++] - '0');
 		if ((sign == 1 && res > INT_MAX) || (sign == -1 && -res < INT_MIN))
-			return (ft_result_err("Integer overflow"));
+			return (ft_result_err_error(FT_ERROR_OVERFLOW("Integer value")));
 	}
 	return (ft_result_ok(create_int(res * sign)));
 }
