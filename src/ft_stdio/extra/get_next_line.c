@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arraylist.h"
 #include "ft_string.h"
 #include <stdbool.h>
 #include <stddef.h>
@@ -21,14 +20,39 @@
 # define BUFFER_SIZE 128
 #endif
 
+static t_string	append_newline(t_string line, size_t *position)
+{
+	line = ft_stncat_size(line, "\n", sizeof(char));
+	if (line)
+		(*position)++;
+	return (line);
+}
+
+static t_string	process_buffer(t_string line, char *buffer, size_t *position)
+{
+	size_t	len;
+
+	len = ft_strcspn(buffer + *position, "\n");
+	line = ft_stncat_size(line, buffer + *position, len);
+	if (line)
+		*position += len;
+	return (line);
+}
+
+static int	read_buffer(int fd, char *buffer, ssize_t *bytes)
+{
+	*bytes = read(fd, buffer, BUFFER_SIZE);
+	if (*bytes <= 0)
+		return (0);
+	buffer[*bytes] = '\0';
+	return (1);
+}
+
 /**
  * @brief Returns a line from the file descriptor `fd`.
  *
  * Repeated calls to this function reads the text file pointed to by the file
  * descriptor, one line at a time.
- *
- * @note The returned line does not include the terminating newline ('\n')
- * character.
  *
  * @param fd The file descriptor to read from.
  * @return The line read. NULL if there is nothing else to read or if an error
@@ -37,10 +61,9 @@
 char	*get_next_line(int fd)
 {
 	t_string		line;
-	static char		buffer[BUFFER_SIZE + 1] = {0};
-	static size_t	position = 0;
-	static ssize_t	bytes_read = 0;
-	size_t			len;
+	static char		buffer[BUFFER_SIZE + 1];
+	static size_t	position;
+	static ssize_t	bytes;
 
 	if (BUFFER_SIZE <= 0 || fd == -1 || read(fd, buffer, 0) == -1)
 		return (NULL);
@@ -49,27 +72,14 @@ char	*get_next_line(int fd)
 		return (NULL);
 	while (true)
 	{
-		if (position == 0)
-		{
-			bytes_read = read(fd, buffer, BUFFER_SIZE);
-			if (bytes_read == -1 || bytes_read == 0)
-				return (ft_stnfree(line), NULL);
-			buffer[bytes_read] = '\0';
-		}
-		len = ft_strcspn(buffer + position, "\n");
-		line = ft_stncat_size(line, buffer + position, len);
+		if (position == 0 && !read_buffer(fd, buffer, &bytes))
+			return (ft_stnfree(line), NULL);
+		line = process_buffer(line, buffer, &position);
 		if (!line)
 			return (NULL);
-		position += len;
 		if (buffer[position] == '\n')
-		{
-			line = ft_stncat_size(line, "\n", sizeof(char));
-			if (!line)
-				return (NULL);
-			position++;
-			break ;
-		}
-		else if (!ft_stnisempty(line) && bytes_read < BUFFER_SIZE)
+			return (append_newline(line, &position));
+		if (!ft_stnisempty(line) && bytes < BUFFER_SIZE)
 			break ;
 		position = 0;
 	}

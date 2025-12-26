@@ -171,6 +171,22 @@ SRCS			:= \
 	ft_arraylist/ft_arrclear.c \
 	ft_arraylist/ft_arrexpand.c \
 	\
+	ft_arena/ft_arena_new.c \
+	ft_arena/ft_arena_alloc.c \
+	ft_arena/ft_arena_calloc.c \
+	ft_arena/ft_arena_reset.c \
+	ft_arena/ft_arena_free.c \
+	ft_arena/ft_arena_align.c \
+	ft_arena/ft_arena_align_ptr.c \
+	ft_arena/ft_arena_block_new.c \
+	ft_arena/ft_arena_alloc_from_block.c \
+	ft_arena/ft_arena_snapshot.c \
+	ft_arena/ft_arena_rewind.c \
+	ft_arena/ft_arena_memdup.c \
+	ft_arena/ft_arena_strdup.c \
+	ft_arena/ft_arena_realloc.c \
+	ft_arena/ft_arena_trim.c \
+	\
 	ft_stack/ft_stknew.c \
 	ft_stack/ft_stkfree.c \
 	ft_stack/ft_stksize.c \
