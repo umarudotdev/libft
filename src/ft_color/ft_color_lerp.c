@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_color_lerp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:49:13 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 16:07:41 by martins          ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hshbegin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 11:51:29 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:43 by martins          ###   ########.fr       */

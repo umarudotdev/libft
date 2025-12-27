@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_color_grayscale.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:49:10 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 16:15:00 by martins          ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_quelast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 03:17:32 by martins           #+#    #+#             */
 /*   Updated: 2024/10/21 10:59:37 by martins          ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arena_snapshot.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/26 00:00:00 by martins          ###   ########.fr       */
@@ -15,7 +15,7 @@
 /**
  * @brief Captures the current allocation state of the arena.
  *
- * Returns a snapshot that can later be passed to ft_arena_rewind() to
+ * Returns a snapshot that can later be passed to `ft_arena_rewind()` to
  * restore the arena to this state, effectively freeing all allocations
  * made after the snapshot.
  *

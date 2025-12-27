@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hshhash.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:18:14 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */

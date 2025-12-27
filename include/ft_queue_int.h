@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_queue_int.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 01:33:04 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:40 by martins          ###   ########.fr       */

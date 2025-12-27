@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 20:28:55 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:06:21 by martins          ###   ########.fr       */

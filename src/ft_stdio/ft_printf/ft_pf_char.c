@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/27 00:00:00 by martins          ###   ########.fr       */

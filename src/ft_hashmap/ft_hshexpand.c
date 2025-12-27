@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hshexpand.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 11:24:10 by martins           #+#    #+#             */
 /*   Updated: 2024/11/16 16:28:45 by martins          ###   ########.fr       */

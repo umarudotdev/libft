@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stdlib.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 07:32:16 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 14:53:21 by martins          ###   ########.fr       */

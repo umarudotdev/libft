@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_color_opacity.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 17:02:34 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 17:02:36 by martins          ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arena_rewind.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/26 00:00:00 by martins          ###   ########.fr       */
@@ -16,7 +16,7 @@
 /**
  * @brief Rewinds the arena to a previous snapshot state.
  *
- * Restores the arena to the state captured by ft_arena_snapshot(),
+ * Restores the arena to the state captured by `ft_arena_snapshot()`,
  * effectively freeing all allocations made after the snapshot.
  * Blocks allocated after the snapshot are freed.
  *

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_color_random.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:16:34 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 16:20:33 by martins          ###   ########.fr       */

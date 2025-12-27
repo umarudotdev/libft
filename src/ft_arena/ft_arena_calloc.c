@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arena_calloc.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/26 00:00:00 by martins          ###   ########.fr       */
@@ -22,7 +22,7 @@
  * @param arena The arena to allocate from.
  * @param nmemb The number of elements to allocate.
  * @param size The size of each element.
- * @return A pointer to the allocated memory, or NULL if allocation failed
+ * @return A pointer to the allocated memory, or `NULL` if allocation failed
  * or if the multiplication would overflow.
  */
 void	*ft_arena_calloc(t_arena arena, size_t nmemb, size_t size)

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arena_free.c                                    :+:      :+:    :+:   */
+/*   ft_arena_alloc_new_block.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,30 +11,32 @@
 /* ************************************************************************** */
 
 #include "ft_arena_int.h"
-#include <stdlib.h>
 
 /**
- * @brief Frees all memory associated with the arena.
+ * @brief Allocates memory from a newly created arena block.
  *
- * Frees all blocks allocated by the arena and the arena structure itself.
- * After calling this function, the arena pointer is invalid and should not
- * be used.
+ * Creates a new block and links it to the arena's block list. If the requested
+ * size exceeds the default block capacity, a larger block is allocated.
  *
- * @param arena The arena to free.
+ * @param arena The arena to allocate from.
+ * @param size The number of bytes to allocate (must be pre-aligned).
+ * @return A pointer to the allocated memory, or NULL if allocation failed.
  */
-void	ft_arena_free(t_arena arena)
+void	*ft_arena_alloc_new_block(t_arena arena, size_t size)
 {
 	struct s_arena_block	*block;
-	struct s_arena_block	*next;
+	size_t					capacity;
 
-	if (!arena)
-		return ;
-	block = arena->head;
-	while (block)
-	{
-		next = block->next;
-		free(block);
-		block = next;
-	}
-	free(arena);
+	capacity = arena->block_capacity;
+	if (size > capacity)
+		capacity = size;
+	block = ft_arena_block_new(capacity);
+	if (!block)
+		return (NULL);
+	if (arena->current)
+		arena->current->next = block;
+	else
+		arena->head = block;
+	arena->current = block;
+	return (ft_arena_alloc_from_block(block, size));
 }

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arena_new.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/26 00:00:00 by martins          ###   ########.fr       */
@@ -26,7 +26,7 @@
  *
  * @param capacity The capacity of each arena block in bytes. If 0, uses the
  * default capacity of 4096 bytes.
- * @return A pointer to the new arena, or NULL if allocation failed.
+ * @return A pointer to the new arena, or `NULL` if allocation failed.
  */
 t_arena	ft_arena_new(size_t capacity)
 {

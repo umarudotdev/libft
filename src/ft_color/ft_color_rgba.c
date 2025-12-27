@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_color_rgba.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:49:23 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 15:58:53 by martins          ###   ########.fr       */

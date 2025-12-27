@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mexpand.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 00:58:08 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:43 by martins          ###   ########.fr       */

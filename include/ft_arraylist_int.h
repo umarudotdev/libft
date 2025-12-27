@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arraylist_int.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 23:07:28 by martins           #+#    #+#             */
 /*   Updated: 2024/11/16 16:01:29 by martins          ###   ########.fr       */

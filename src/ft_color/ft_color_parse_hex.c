@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_color_parse.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:49:18 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 18:22:29 by martins          ###   ########.fr       */

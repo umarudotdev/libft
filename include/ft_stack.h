@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 18:50:43 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */

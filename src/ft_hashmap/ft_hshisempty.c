@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hshisempty.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 23:23:01 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:05:51 by martins          ###   ########.fr       */

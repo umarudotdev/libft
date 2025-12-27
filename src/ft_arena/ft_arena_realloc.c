@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arena_realloc.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/26 00:00:00 by martins          ###   ########.fr       */
@@ -18,14 +18,14 @@
  *
  * Allocates new memory from the arena and copies the old data into it.
  * The old memory is not freed (arena allocators don't support individual
- * frees). If new_size is smaller than old_size, only new_size bytes are
+ * frees). If `new_size` is smaller than `old_size`, only `new_size` bytes are
  * copied.
  *
  * @param arena The arena to allocate from.
- * @param ptr The pointer to the old memory (can be NULL).
+ * @param ptr The pointer to the old memory (can be `NULL`).
  * @param old_size The size of the old allocation.
  * @param new_size The size of the new allocation.
- * @return A pointer to the new memory, or NULL on failure.
+ * @return A pointer to the new memory, or `NULL` on failure.
  */
 void	*ft_arena_realloc(t_arena arena, void *ptr, size_t old_size,
 		size_t new_size)

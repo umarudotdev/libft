@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 21:38:59 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arrnew_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 00:31:59 by martins           #+#    #+#             */
 /*   Updated: 2024/11/16 01:46:10 by martins          ###   ########.fr       */

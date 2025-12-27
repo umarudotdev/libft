@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string_int.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 21:30:23 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:43 by martins          ###   ########.fr       */

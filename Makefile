@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+         #
+#    By: martins <martins@umaru.dev>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:20:34 by martins           #+#    #+#              #
 #    Updated: 2024/12/17 15:40:14 by martins          ###   ########.fr        #
@@ -180,22 +180,6 @@ SRCS			:= \
 	ft_arraylist/ft_arrclear.c \
 	ft_arraylist/ft_arrexpand.c \
 	\
-	ft_arena/ft_arena_new.c \
-	ft_arena/ft_arena_alloc.c \
-	ft_arena/ft_arena_calloc.c \
-	ft_arena/ft_arena_reset.c \
-	ft_arena/ft_arena_free.c \
-	ft_arena/ft_arena_align.c \
-	ft_arena/ft_arena_align_ptr.c \
-	ft_arena/ft_arena_block_new.c \
-	ft_arena/ft_arena_alloc_from_block.c \
-	ft_arena/ft_arena_snapshot.c \
-	ft_arena/ft_arena_rewind.c \
-	ft_arena/ft_arena_memdup.c \
-	ft_arena/ft_arena_strdup.c \
-	ft_arena/ft_arena_realloc.c \
-	ft_arena/ft_arena_trim.c \
-	\
 	ft_stack/ft_stknew.c \
 	ft_stack/ft_stkfree.c \
 	ft_stack/ft_stksize.c \
@@ -268,6 +252,23 @@ SRCS			:= \
 	ft_color/ft_color_random.c \
 	ft_color/ft_color_parse_rgb.c \
 	ft_color/ft_color_parse_hex.c \
+	\
+	ft_arena/ft_arena_new.c \
+	ft_arena/ft_arena_free.c \
+	ft_arena/ft_arena_alloc.c \
+	ft_arena/ft_arena_calloc.c \
+	ft_arena/ft_arena_realloc.c \
+	ft_arena/ft_arena_memdup.c \
+	ft_arena/ft_arena_strdup.c \
+	ft_arena/ft_arena_snapshot.c \
+	ft_arena/ft_arena_rewind.c \
+	ft_arena/ft_arena_trim.c \
+	ft_arena/ft_arena_reset.c \
+	ft_arena/ft_arena_align.c \
+	ft_arena/ft_arena_align_ptr.c \
+	ft_arena/ft_arena_block_new.c \
+	ft_arena/ft_arena_alloc_from_block.c \
+	ft_arena/ft_arena_alloc_new_block.c \
 
 # Or use a wildcard to generate the sources list automatically
 # SRCS		:= $(shell find $(SRC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.s')

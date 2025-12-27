@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stncap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 06:12:27 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:04:17 by martins          ###   ########.fr       */

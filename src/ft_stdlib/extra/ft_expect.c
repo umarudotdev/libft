@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_expect.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 19:01:28 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 14:47:23 by martins          ###   ########.fr       */

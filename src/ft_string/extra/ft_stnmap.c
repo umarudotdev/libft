@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stnmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 00:19:40 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */

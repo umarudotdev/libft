@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ansi.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:20:53 by martins           #+#    #+#             */
 /*   Updated: 2024/12/15 15:21:44 by martins          ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arena_int.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/26 00:00:00 by martins          ###   ########.fr       */
@@ -38,6 +38,8 @@ size_t						ft_arena_align(size_t size);
 char						*ft_arena_align_ptr(char *ptr);
 struct s_arena_block		*ft_arena_block_new(size_t capacity);
 void						*ft_arena_alloc_from_block(struct s_arena_block *block,
+								size_t size);
+void						*ft_arena_alloc_new_block(t_arena arena,
 								size_t size);
 
 #endif

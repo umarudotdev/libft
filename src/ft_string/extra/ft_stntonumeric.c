@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stntonumeric.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:12:45 by martins           #+#    #+#             */
 /*   Updated: 2024/09/29 21:28:38 by martins          ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arena_strdup.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/26 00:00:00 by martins          ###   ########.fr       */
@@ -21,7 +21,7 @@
  *
  * @param arena The arena to allocate from.
  * @param str The source string to duplicate.
- * @return A pointer to the duplicated string, or NULL on failure.
+ * @return A pointer to the duplicated string, or `NULL` on failure.
  */
 char	*ft_arena_strdup(t_arena arena, const char *str)
 {

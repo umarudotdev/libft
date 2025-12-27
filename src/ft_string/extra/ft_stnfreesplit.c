@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stnfreesplit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 00:30:14 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:40 by martins          ###   ########.fr       */

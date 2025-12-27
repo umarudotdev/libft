@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stksize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 02:27:09 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:05:28 by martins          ###   ########.fr       */

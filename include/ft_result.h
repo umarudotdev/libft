@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_result.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martins <martins@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2025/08/02 00:00:00 by martins          ###   ########.fr       */
