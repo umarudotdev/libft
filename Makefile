@@ -145,6 +145,15 @@ SRCS			:= \
 	ft_stdio/extra/ft_putnbr_hex_fd.c \
 	ft_stdio/extra/ft_putnbr_hex.c \
 	ft_stdio/extra/get_next_line.c \
+	ft_stdio/ft_printf.c \
+	ft_stdio/ft_printf/ft_pf_parse.c \
+	ft_stdio/ft_printf/ft_pf_utils.c \
+	ft_stdio/ft_printf/ft_pf_char.c \
+	ft_stdio/ft_printf/ft_pf_str.c \
+	ft_stdio/ft_printf/ft_pf_int.c \
+	ft_stdio/ft_printf/ft_pf_uint.c \
+	ft_stdio/ft_printf/ft_pf_hex.c \
+	ft_stdio/ft_printf/ft_pf_ptr.c \
 	\
 	ft_linkedlist/ft_lstnew.c \
 	ft_linkedlist/ft_lstadd_front.c \
