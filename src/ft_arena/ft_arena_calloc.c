@@ -30,9 +30,9 @@ void	*ft_arena_calloc(t_arena arena, size_t nmemb, size_t size)
 	void	*ptr;
 	size_t	bytes;
 
-	bytes = nmemb * size;
-	if (bytes != 0 && bytes / nmemb != size)
+	if (size != 0 && nmemb > (size_t)-1 / size)
 		return (NULL);
+	bytes = nmemb * size;
 	ptr = ft_arena_alloc(arena, bytes);
 	if (!ptr)
 		return (NULL);
