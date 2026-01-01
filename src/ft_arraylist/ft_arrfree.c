@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrfree.c                                       :+:      :+:    :+:   */
+/*   ft_arrfree.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 01:47:38 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:02:43 by martins          ###   ########.fr       */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_arraylist.h"
 #include "ft_arraylist_int.h"
-#include <stdlib.h>
 
 /**
  * @brief Frees the array pointed to by `arr`.
@@ -22,6 +22,6 @@ void	ft_arrfree(t_array *arr)
 {
 	if (!arr)
 		return ;
-	free(arr->elements);
-	free(arr);
+	ft_free(arr->allocator, arr->elements);
+	ft_free(arr->allocator, arr);
 }

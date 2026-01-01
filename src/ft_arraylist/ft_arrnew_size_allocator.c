@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrexpand.c                                    :+:      :+:    :+:   */
+/*   ft_arrnew_size_allocator.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 06:19:25 by martins           #+#    #+#             */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -16,27 +16,27 @@
 #include <stddef.h>
 
 /**
- * @brief Expands the capacity of the array to `size`.
+ * @brief Allocates and returns a new array using the given allocator.
  *
- * @param arr A pointer to the array to expand.
- * @param size The new capacity of the array.
- * @return The expanded array. NULL if the allocation fails.
+ * @param alloc The allocator to use.
+ * @param size The size in bytes of the elements to be stored in the array.
+ * @param capacity The initial capacity of the array.
+ * @return The new array.
  */
-t_array	*ft_arrexpand(t_array *arr, size_t size)
+t_array	*ft_arrnew_size_allocator(t_allocator a, size_t size, size_t capacity)
 {
-	void	*tmp;
-	size_t	new_bytes;
-	size_t	old_bytes;
+	t_array	*arr;
 
-	if (size <= arr->capacity)
-		return (arr);
-	new_bytes = (size + 1) * arr->element_size;
-	old_bytes = (arr->capacity + 1) * arr->element_size;
-	tmp = ft_realloc(arr->allocator, arr->elements, old_bytes, new_bytes);
-	if (!tmp)
+	arr = ft_alloc(a, sizeof(t_array));
+	if (!arr)
 		return (NULL);
-	ft_bzero((char *)tmp + old_bytes, new_bytes - old_bytes);
-	arr->elements = tmp;
-	arr->capacity = size;
+	arr->elements = ft_alloc(a, (capacity + 1) * size);
+	if (!arr->elements)
+		return (ft_free(a, arr), NULL);
+	ft_bzero(arr->elements, (capacity + 1) * size);
+	arr->element_size = size;
+	arr->size = 0;
+	arr->capacity = capacity;
+	arr->allocator = a;
 	return (arr);
 }

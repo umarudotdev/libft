@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_arraylist.h"
 #include "ft_arraylist_int.h"
 #include <stddef.h>
 

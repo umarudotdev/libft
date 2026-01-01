@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_queenqueue.c                                   :+:      :+:    :+:   */
+/*   ft_lstnew_allocator.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/23 01:54:55 by martins           #+#    #+#             */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_queue.h"
-#include "ft_queue_int.h"
-#include <stdbool.h>
+#include "ft_linkedlist.h"
+#include <stddef.h>
 
 /**
- * @brief Adds a new element to the end of the queue.
+ * @brief Allocates and returns a new node using the given allocator.
  *
- * @param que A pointer to the queue to add to.
- * @param content The content to add to the queue.
- * @return `true` if the element was added successfully. `false` otherwise.
+ * The variable `content` is initialized with the value of the parameter
+ * `content`. The variable `next` is initialized to NULL.
+ *
+ * @param alloc The allocator to use.
+ * @param content The content to create the new node with.
+ * @return The new node.
  */
-bool	ft_queenqueue(t_queue *que, void *content)
+t_list	*ft_lstnew_allocator(t_allocator a, void *content)
 {
-	t_list	*new;
+	t_list	*node;
 
-	new = ft_lstnew_allocator(que->allocator, content);
-	if (!new)
-		return (false);
-	if (!que->front)
-		que->front = new;
-	else
-		que->back->next = new;
-	que->back = new;
-	que->size++;
-	return (true);
+	node = ft_alloc(a, sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

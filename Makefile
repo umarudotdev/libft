@@ -156,6 +156,7 @@ SRCS			:= \
 	ft_stdio/ft_printf/ft_pf_ptr.c \
 	\
 	ft_linkedlist/ft_lstnew.c \
+	ft_linkedlist/ft_lstnew_allocator.c \
 	ft_linkedlist/ft_lstadd_front.c \
 	ft_linkedlist/ft_lstaddcontent_front.c \
 	ft_linkedlist/ft_lstsize.c \
@@ -169,6 +170,8 @@ SRCS			:= \
 	\
 	ft_arraylist/ft_arrnew.c \
 	ft_arraylist/ft_arrnew_size.c \
+	ft_arraylist/ft_arrnew_allocator.c \
+	ft_arraylist/ft_arrnew_size_allocator.c \
 	ft_arraylist/ft_arrfree.c \
 	ft_arraylist/ft_arrsize.c \
 	ft_arraylist/ft_arrisempty.c \
@@ -181,6 +184,7 @@ SRCS			:= \
 	ft_arraylist/ft_arrexpand.c \
 	\
 	ft_stack/ft_stknew.c \
+	ft_stack/ft_stknew_allocator.c \
 	ft_stack/ft_stkfree.c \
 	ft_stack/ft_stksize.c \
 	ft_stack/ft_stkisempty.c \
@@ -192,6 +196,7 @@ SRCS			:= \
 	ft_stack/ft_stkrrotate.c \
 	\
 	ft_queue/ft_quenew.c \
+	ft_queue/ft_quenew_allocator.c \
 	ft_queue/ft_quefree.c \
 	ft_queue/ft_quesize.c \
 	ft_queue/ft_queisempty.c \
@@ -201,6 +206,7 @@ SRCS			:= \
 	ft_queue/ft_quedequeue.c \
 	\
 	ft_hashmap/ft_hshnew.c \
+	ft_hashmap/ft_hshnew_allocator.c \
 	ft_hashmap/ft_hshfree.c \
 	ft_hashmap/ft_hshsize.c \
 	ft_hashmap/ft_hshisempty.c \
@@ -269,6 +275,12 @@ SRCS			:= \
 	ft_arena/ft_arena_block_new.c \
 	ft_arena/ft_arena_alloc_from_block.c \
 	ft_arena/ft_arena_alloc_new_block.c \
+	ft_arena/ft_arena_allocator.c \
+	\
+	ft_allocator/ft_alloc.c \
+	ft_allocator/ft_realloc.c \
+	ft_allocator/ft_free.c \
+	ft_allocator/ft_heap_allocator.c \
 
 # Or use a wildcard to generate the sources list automatically
 # SRCS		:= $(shell find $(SRC_DIR) -name '*.c' -or -name '*.cpp' -or -name '*.s')

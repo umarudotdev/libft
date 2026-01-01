@@ -13,18 +13,19 @@
 #ifndef FT_ARRAYLIST_INT_H
 # define FT_ARRAYLIST_INT_H
 
-# include "ft_arraylist.h"
+# include "ft_allocator.h"
 # include <stddef.h>
 
 # define ARRAY_DEFAULT_CAPACITY 16
 # define ARRAY_GROWTH_FACTOR 2
 
-struct		s_array
+struct			s_array
 {
-	void	*elements;
-	size_t	element_size;
-	size_t	size;
-	size_t	capacity;
+	void		*elements;
+	size_t		element_size;
+	size_t		size;
+	size_t		capacity;
+	t_allocator	allocator;
 };
 
 #endif

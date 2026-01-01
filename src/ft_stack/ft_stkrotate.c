@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_linkedlist.h"
+#include "ft_stack.h"
 #include "ft_stack_int.h"
 #include <stdbool.h>
 

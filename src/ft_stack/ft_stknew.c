@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stknew.c                                        :+:      :+:    :+:   */
+/*   ft_stknew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 00:51:57 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_stack.h"
 #include "ft_stack_int.h"
-#include <stddef.h>
-#include <stdlib.h>
 
 /**
- * @brief Allocates (with malloc(3)) and returns a new stack.
+ * @brief Allocates and returns a new stack using the heap allocator.
  *
  * @return The new stack.
  */
 t_stack	*ft_stknew(void)
 {
-	t_stack	*stk;
-
-	stk = malloc(sizeof(t_stack));
-	if (!stk)
-		return (NULL);
-	stk->top = NULL;
-	stk->size = 0;
-	return (stk);
+	return (ft_stknew_allocator(ft_heap_allocator()));
 }

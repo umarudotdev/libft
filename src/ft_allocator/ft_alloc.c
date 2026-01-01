@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrsize.c                                       :+:      :+:    :+:   */
+/*   ft_alloc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 21:10:07 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arraylist.h"
-#include "ft_arraylist_int.h"
-#include <stddef.h>
+#include "ft_allocator.h"
 
 /**
- * @brief Returns the number of elements in the array.
+ * @brief Allocates memory using the given allocator.
  *
- * @param arr A pointer to the array to be checked.
- * @return The size of the array.
+ * @param a The allocator to use.
+ * @param size The size of the memory to allocate.
+ * @return A pointer to the allocated memory, or `NULL` on failure.
  */
-size_t	ft_arrsize(const t_array *arr)
+void	*ft_alloc(t_allocator a, size_t size)
 {
-	return (arr->size);
+	return (a.vtable->alloc(a.context, size));
 }

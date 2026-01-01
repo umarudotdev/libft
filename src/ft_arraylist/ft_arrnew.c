@@ -10,29 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_arraylist.h"
 #include "ft_arraylist_int.h"
-#include "ft_stdlib.h"
 #include <stddef.h>
-#include <stdlib.h>
 
 /**
- * @brief Allocates (with malloc(3)) and returns a new array.
+ * @brief Allocates and returns a new array using the heap allocator.
  *
  * @param size The size in bytes of the elements to be stored in the array.
  * @return The new array.
  */
 t_array	*ft_arrnew(size_t size)
 {
-	t_array	*arr;
-
-	arr = malloc(sizeof(t_array));
-	if (!arr)
-		return (NULL);
-	arr->elements = ft_calloc(ARRAY_DEFAULT_CAPACITY + 1, size);
-	if (!arr->elements)
-		return (free(arr), NULL);
-	arr->element_size = size;
-	arr->size = 0;
-	arr->capacity = ARRAY_DEFAULT_CAPACITY;
-	return (arr);
+	return (ft_arrnew_allocator(ft_heap_allocator(), size));
 }

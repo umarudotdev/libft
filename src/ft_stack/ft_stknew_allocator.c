@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrsize.c                                       :+:      :+:    :+:   */
+/*   ft_stknew_allocator.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 21:10:07 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arraylist.h"
-#include "ft_arraylist_int.h"
+#include "ft_stack.h"
+#include "ft_stack_int.h"
 #include <stddef.h>
 
 /**
- * @brief Returns the number of elements in the array.
+ * @brief Allocates and returns a new stack using the given allocator.
  *
- * @param arr A pointer to the array to be checked.
- * @return The size of the array.
+ * @param alloc The allocator to use.
+ * @return The new stack.
  */
-size_t	ft_arrsize(const t_array *arr)
+t_stack	*ft_stknew_allocator(t_allocator a)
 {
-	return (arr->size);
+	t_stack	*stk;
+
+	stk = ft_alloc(a, sizeof(t_stack));
+	if (!stk)
+		return (NULL);
+	stk->top = NULL;
+	stk->size = 0;
+	stk->allocator = a;
+	return (stk);
 }

@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrsize.c                                       :+:      :+:    :+:   */
+/*   ft_quenew_allocator.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 21:10:07 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arraylist.h"
-#include "ft_arraylist_int.h"
+#include "ft_queue.h"
+#include "ft_queue_int.h"
 #include <stddef.h>
 
 /**
- * @brief Returns the number of elements in the array.
+ * @brief Allocates and returns a new queue using the given allocator.
  *
- * @param arr A pointer to the array to be checked.
- * @return The size of the array.
+ * @param alloc The allocator to use.
+ * @return The new queue.
  */
-size_t	ft_arrsize(const t_array *arr)
+t_queue	*ft_quenew_allocator(t_allocator a)
 {
-	return (arr->size);
+	t_queue	*que;
+
+	que = ft_alloc(a, sizeof(t_queue));
+	if (!que)
+		return (NULL);
+	que->front = NULL;
+	que->back = NULL;
+	que->size = 0;
+	que->allocator = a;
+	return (que);
 }

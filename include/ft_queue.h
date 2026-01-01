@@ -13,12 +13,14 @@
 #ifndef FT_QUEUE_H
 # define FT_QUEUE_H
 
+# include "ft_allocator.h"
 # include <stdbool.h>
 # include <stddef.h>
 
 typedef struct s_queue	t_queue;
 
 t_queue					*ft_quenew(void);
+t_queue					*ft_quenew_allocator(t_allocator a);
 void					ft_quefree(t_queue *que, void (*del)(void *));
 size_t					ft_quesize(const t_queue *que);
 bool					ft_queisempty(const t_queue *que);

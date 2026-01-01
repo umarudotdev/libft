@@ -13,6 +13,7 @@
 #ifndef FT_ARRAYLIST_H
 # define FT_ARRAYLIST_H
 
+# include "ft_allocator.h"
 # include <stdbool.h>
 # include <stddef.h>
 
@@ -20,6 +21,9 @@ typedef struct s_array	t_array;
 
 t_array					*ft_arrnew(size_t size);
 t_array					*ft_arrnew_size(size_t size, size_t capacity);
+t_array					*ft_arrnew_allocator(t_allocator a, size_t size);
+t_array					*ft_arrnew_size_allocator(t_allocator a, size_t size,
+							size_t capacity);
 void					ft_arrfree(t_array *arr);
 size_t					ft_arrsize(const t_array *arr);
 size_t					ft_arrcap(const t_array *arr);

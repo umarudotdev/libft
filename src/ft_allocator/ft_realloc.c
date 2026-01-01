@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_queenqueue.c                                   :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/23 01:54:55 by martins           #+#    #+#             */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_queue.h"
-#include "ft_queue_int.h"
-#include <stdbool.h>
+#include "ft_allocator.h"
 
 /**
- * @brief Adds a new element to the end of the queue.
+ * @brief Resizes memory using the given allocator.
  *
- * @param que A pointer to the queue to add to.
- * @param content The content to add to the queue.
- * @return `true` if the element was added successfully. `false` otherwise.
+ * @param a The allocator to use.
+ * @param ptr The pointer to resize.
+ * @param old_size The old size of the memory.
+ * @param new_size The new size of the memory.
+ * @return A pointer to the resized memory, or `NULL` on failure.
  */
-bool	ft_queenqueue(t_queue *que, void *content)
+void	*ft_realloc(t_allocator a, void *ptr, size_t old_size, size_t new_size)
 {
-	t_list	*new;
-
-	new = ft_lstnew_allocator(que->allocator, content);
-	if (!new)
-		return (false);
-	if (!que->front)
-		que->front = new;
-	else
-		que->back->next = new;
-	que->back = new;
-	que->size++;
-	return (true);
+	return (a.vtable->realloc(a.context, ptr, old_size, new_size));
 }

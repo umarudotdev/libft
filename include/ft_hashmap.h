@@ -13,6 +13,7 @@
 #ifndef FT_HASHMAP_H
 # define FT_HASHMAP_H
 
+# include "ft_allocator.h"
 # include <stdbool.h>
 # include <stddef.h>
 
@@ -32,6 +33,8 @@ typedef struct s_hashmap_iterator
 typedef size_t				(*t_hash_func)(const char *key);
 
 t_hashmap					*ft_hshnew(t_hash_func hash);
+t_hashmap					*ft_hshnew_allocator(t_allocator a,
+								t_hash_func hash);
 void						ft_hshfree(t_hashmap *hsh);
 size_t						ft_hshsize(const t_hashmap *hsh);
 bool						ft_hshisempty(const t_hashmap *hsh);

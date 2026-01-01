@@ -13,6 +13,7 @@
 #ifndef FT_HASHMAP_INT_H
 # define FT_HASHMAP_INT_H
 
+# include "ft_allocator.h"
 # include "ft_arraylist.h"
 # include "ft_hashmap.h"
 # include <stddef.h>
@@ -25,6 +26,7 @@ struct			s_hashmap
 	t_array		*entries;
 	size_t		size;
 	t_hash_func	hash;
+	t_allocator	allocator;
 };
 
 struct			s_entry

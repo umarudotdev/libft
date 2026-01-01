@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_hashmap.h"
 #include "ft_hashmap_int.h"
 #include <stdbool.h>
 

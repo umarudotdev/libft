@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hshexpand.c                                     :+:      :+:    :+:   */
+/*   ft_hshexpand.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 11:24:10 by martins           #+#    #+#             */
-/*   Updated: 2024/11/16 16:28:45 by martins          ###   ########.fr       */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_arraylist_int.h"
+#include "ft_hashmap.h"
 #include "ft_hashmap_int.h"
 #include <stddef.h>
 
@@ -30,7 +31,8 @@ t_hashmap	*ft_hshexpand(t_hashmap *hsh, size_t size)
 	struct s_entry	*entry;
 	size_t			index;
 
-	tmp = ft_arrnew_size(sizeof(struct s_entry), size);
+	tmp = ft_arrnew_size_allocator(hsh->allocator, sizeof(struct s_entry),
+			size);
 	if (!tmp)
 		return (ft_arrfree(tmp), NULL);
 	hsh->size = 0;

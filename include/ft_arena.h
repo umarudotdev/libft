@@ -13,6 +13,7 @@
 #ifndef FT_ARENA_H
 # define FT_ARENA_H
 
+# include "ft_allocator.h"
 # include <stddef.h>
 
 typedef struct s_arena	*t_arena;
@@ -37,5 +38,6 @@ t_arena_mark			ft_arena_snapshot(t_arena arena);
 void					ft_arena_rewind(t_arena arena, t_arena_mark mark);
 void					ft_arena_trim(t_arena arena);
 void					ft_arena_reset(t_arena arena);
+t_allocator				ft_arena_allocator(t_arena arena);
 
 #endif

@@ -13,6 +13,8 @@
 #ifndef FT_LINKEDLIST_H
 # define FT_LINKEDLIST_H
 
+# include "ft_allocator.h"
+
 typedef struct s_list
 {
 	void			*content;
@@ -20,6 +22,7 @@ typedef struct s_list
 }					t_list;
 
 t_list				*ft_lstnew(void *content);
+t_list				*ft_lstnew_allocator(t_allocator a, void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 t_list				*ft_lstaddcontent_front(t_list **lst, void *content);
 int					ft_lstsize(t_list *lst);

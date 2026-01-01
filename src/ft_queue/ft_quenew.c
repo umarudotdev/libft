@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_quenew.c                                        :+:      :+:    :+:   */
+/*   ft_quenew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 01:54:55 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:05:34 by martins          ###   ########.fr       */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_queue.h"
 #include "ft_queue_int.h"
-#include <stddef.h>
-#include <stdlib.h>
 
 /**
- * @brief Allocates (with malloc(3)) and returns a new queue.
+ * @brief Allocates and returns a new queue using the heap allocator.
  *
  * @return The new queue.
  */
 t_queue	*ft_quenew(void)
 {
-	t_queue	*que;
-
-	que = malloc(sizeof(t_queue));
-	if (!que)
-		return (NULL);
-	que->front = NULL;
-	que->back = NULL;
-	que->size = 0;
-	return (que);
+	return (ft_quenew_allocator(ft_heap_allocator()));
 }

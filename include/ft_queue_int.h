@@ -13,15 +13,16 @@
 #ifndef FT_QUEUE_INT_H
 # define FT_QUEUE_INT_H
 
+# include "ft_allocator.h"
 # include "ft_linkedlist.h"
-# include "ft_queue.h"
 # include <stddef.h>
 
-struct		s_queue
+struct			s_queue
 {
-	t_list	*front;
-	t_list	*back;
-	size_t	size;
+	t_list		*front;
+	t_list		*back;
+	size_t		size;
+	t_allocator	allocator;
 };
 
 #endif

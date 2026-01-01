@@ -13,14 +13,15 @@
 #ifndef FT_STACK_INT_H
 # define FT_STACK_INT_H
 
+# include "ft_allocator.h"
 # include "ft_linkedlist.h"
-# include "ft_stack.h"
 # include <stddef.h>
 
-struct		s_stack
+struct			s_stack
 {
-	t_list	*top;
-	size_t	size;
+	t_list		*top;
+	size_t		size;
+	t_allocator	allocator;
 };
 
 #endif
