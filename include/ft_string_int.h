@@ -13,6 +13,7 @@
 #ifndef FT_STRING_INT_H
 # define FT_STRING_INT_H
 
+# include "ft_allocator.h"
 # include "ft_string.h"
 # include <stddef.h>
 
@@ -20,6 +21,7 @@ struct					s_string_header
 {
 	size_t				size;
 	size_t				capacity;
+	t_allocator			allocator;
 	char				buffer[];
 };
 

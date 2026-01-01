@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stdlib.h"
 #include "ft_string_int.h"
 #include <stddef.h>
 
@@ -33,7 +32,8 @@ t_string	ft_stnexpand(t_string s, size_t size)
 		return (s);
 	newsize = (len + size) * 2;
 	ptr = ft_stnhdr(s);
-	ptr = ft_mexpand(ptr, header_size + newsize + 1, header_size + len + 1);
+	ptr = ft_realloc(ptr->allocator, ptr, header_size + len + 1, header_size
+			+ newsize + 1);
 	if (!ptr)
 		return (NULL);
 	s = ptr->buffer;

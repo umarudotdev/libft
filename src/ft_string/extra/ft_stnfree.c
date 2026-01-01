@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_string_int.h"
-#include <stdlib.h>
 
 /**
  * @brief Frees the binary-safe string pointed to by `s`.
@@ -20,7 +19,10 @@
  */
 void	ft_stnfree(t_string s)
 {
+	struct s_string_header	*hdr;
+
 	if (!s)
 		return ;
-	free(ft_stnhdr(s));
+	hdr = ft_stnhdr(s);
+	ft_free(hdr->allocator, hdr);
 }

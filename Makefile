@@ -75,6 +75,9 @@ SRCS			:= \
 	ft_string/extra/ft_stnnew.c \
 	ft_string/extra/ft_stnnew_size.c \
 	ft_string/extra/ft_stnnew_empty.c \
+	ft_string/extra/ft_stnnew_allocator.c \
+	ft_string/extra/ft_stnnew_size_allocator.c \
+	ft_string/extra/ft_stnnew_empty_allocator.c \
 	ft_string/extra/ft_stnfree.c \
 	ft_string/extra/ft_stnlen.c \
 	ft_string/extra/ft_stncap.c \

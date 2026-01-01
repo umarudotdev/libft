@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stnnew_size.c                                   :+:      :+:    :+:   */
+/*   ft_stnnew_empty_allocator.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/29 02:47:46 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string_int.h"
-#include <stddef.h>
 
 /**
- * @brief Allocates (with malloc(3)) and returns a new binary-safe string with
- * the given size.
+ * @brief Allocates and returns a new, empty, binary-safe string using the
+ * provided allocator.
  *
- * @param s The content to create the string with.
- * @param size The size of the string.
+ * @param a The allocator to use.
  * @return The new string.
  */
-t_string	ft_stnnew_size(const char *s, size_t size)
+t_string	ft_stnnew_empty_allocator(t_allocator a)
 {
-	return (ft_stnnew_size_allocator(ft_heap_allocator(), s, size));
+	return (ft_stnnew_size_allocator(a, "", 0));
 }

@@ -20,5 +20,5 @@
  */
 t_string	ft_stndup(const t_string s)
 {
-	return (ft_stnnew_size(s, ft_stnlen(s)));
+	return (ft_stnnew_size_allocator(ft_stnhdr(s)->allocator, s, ft_stnlen(s)));
 }

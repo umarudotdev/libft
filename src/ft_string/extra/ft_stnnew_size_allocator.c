@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stncontract.c                                   :+:      :+:    :+:   */
+/*   ft_stnnew_size_allocator.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 18:56:03 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:04:40 by martins          ###   ########.fr       */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
+/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,31 @@
 #include <stddef.h>
 
 /**
- * @brief Removes the free space at the end of the binary-safe string `s`.
+ * @brief Allocates and returns a new binary-safe string with the given size
+ * using the provided allocator.
  *
- * @param s The string to contract.
- * @return The contracted string. NULL if the allocation fails.
+ * @param a The allocator to use.
+ * @param s The content to create the string with.
+ * @param size The size of the string.
+ * @return The new string.
  */
-t_string	ft_stncontract(t_string s)
+t_string	ft_stnnew_size_allocator(t_allocator a, const char *s, size_t size)
 {
+	t_string				stn;
 	static const size_t		header_size = sizeof(struct s_string_header);
-	size_t					len;
 	struct s_string_header	*ptr;
 
-	len = ft_stnlen(s);
-	if (ft_stncap(s) - len == 0)
-		return (s);
-	ptr = ft_stnhdr(s);
-	ptr = ft_realloc(ptr->allocator, ptr, header_size + ft_stncap(s) + 1,
-			header_size + len + 1);
+	ptr = ft_alloc(a, header_size + size + 1);
 	if (!ptr)
 		return (NULL);
-	s = ptr->buffer;
-	ptr->capacity = len;
-	return (s);
+	ptr->allocator = a;
+	ptr->size = size;
+	ptr->capacity = size;
+	stn = ptr->buffer;
+	if (s)
+		ft_memcpy(stn, s, size);
+	else
+		ft_bzero(stn, size);
+	stn[size] = '\0';
+	return (stn);
 }

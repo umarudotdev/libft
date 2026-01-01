@@ -13,6 +13,7 @@
 #ifndef FT_STRING_H
 # define FT_STRING_H
 
+# include "ft_allocator.h"
 # include "ft_arraylist.h"
 # include <stdbool.h>
 # include <stddef.h>
@@ -48,6 +49,10 @@ bool			ft_strall(const char *s, int (*f)(int));
 t_string		ft_stnnew(const char *s);
 t_string		ft_stnnew_size(const char *s, size_t size);
 t_string		ft_stnnew_empty(void);
+t_string		ft_stnnew_allocator(t_allocator a, const char *s);
+t_string		ft_stnnew_size_allocator(t_allocator a, const char *s,
+					size_t size);
+t_string		ft_stnnew_empty_allocator(t_allocator a);
 void			ft_stnfree(t_string s);
 size_t			ft_stnlen(const t_string s);
 size_t			ft_stncap(const t_string s);
