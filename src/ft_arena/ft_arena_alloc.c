@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_arena.h"
-#include "ft_arena_int.h"
+#include "ft_arena_internal.h"
 
 /**
  * @brief Allocates memory from the arena.

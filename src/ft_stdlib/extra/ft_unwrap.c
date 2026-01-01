@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stknew.c                                       :+:      :+:    :+:   */
+/*   ft_unwrap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 00:51:57 by martins           #+#    #+#             */
+/*   Created: 2024/12/31 00:00:00 by martins           #+#    #+#             */
 /*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stack.h"
-#include "ft_stack_internal.h"
+#include "ft_stdlib.h"
 
 /**
- * @brief Allocates and returns a new stack using the heap allocator.
+ * @brief Returns the pointer if not `NULL`, panics otherwise.
  *
- * @return The new stack.
+ * This function returns the pointer if it is not `NULL`. If the pointer is
+ * `NULL`, it calls `ft_panic` to terminate the program. This should only be
+ * used when you are certain the pointer is not `NULL`, or when a panic is
+ * acceptable.
+ *
+ * @param ptr The pointer to unwrap.
+ * @return The pointer if it is not `NULL`.
+ * @note This function will panic if the pointer is `NULL`.
  */
-t_stack	*ft_stknew(void)
+void	*ft_unwrap(void *ptr)
 {
-	return (ft_stknew_allocator(ft_heap_allocator()));
+	if (!ptr)
+		ft_panic("called `ft_unwrap` on a NULL pointer");
+	return (ptr);
 }

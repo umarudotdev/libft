@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arraylist_int.h"
+#include "ft_arraylist_internal.h"
 #include "ft_hashmap.h"
-#include "ft_hashmap_int.h"
+#include "ft_hashmap_internal.h"
 #include <stddef.h>
 
 static void	set_entry(t_array *entries, struct s_entry *entry, size_t index);

@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string_int.h"
+#include "ft_string.h"
+#include "ft_string_internal.h"
 
 /**
  * @brief Duplicates the binary safe-string `s`.

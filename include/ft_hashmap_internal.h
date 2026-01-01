@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arraylist_int.h                                 :+:      :+:    :+:   */
+/*   ft_hashmap_int.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 23:07:28 by martins           #+#    #+#             */
-/*   Updated: 2024/11/16 16:01:29 by martins          ###   ########.fr       */
+/*   Created: 2024/05/03 18:20:42 by martins           #+#    #+#             */
+/*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ARRAYLIST_INT_H
-# define FT_ARRAYLIST_INT_H
+#ifndef FT_HASHMAP_INTERNAL_H
+# define FT_HASHMAP_INTERNAL_H
 
 # include "ft_allocator.h"
+# include "ft_arraylist.h"
+# include "ft_hashmap.h"
 # include <stddef.h>
 
-# define ARRAY_DEFAULT_CAPACITY 16
-# define ARRAY_GROWTH_FACTOR 2
+# define HASHMAP_MAX_LOAD_FACTOR 0.75
+# define HASHMAP_GROWTH_FACTOR 2
 
-struct			s_array
+struct			s_hashmap
 {
-	void		*elements;
-	size_t		element_size;
+	t_array		*entries;
 	size_t		size;
-	size_t		capacity;
+	t_hash_func	hash;
 	t_allocator	allocator;
 };
+
+struct			s_entry
+{
+	const char	*key;
+	void		*value;
+};
+
+size_t			ft_hshhash(const char *key);
+struct s_entry	*ft_hshfind(const t_hashmap *hsh, const char *key);
+t_hashmap		*ft_hshexpand(t_hashmap *hsh, size_t size);
 
 #endif

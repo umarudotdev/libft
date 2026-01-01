@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_hashmap.h"
-#include "ft_hashmap_int.h"
 
 /**
  * @brief Allocates and returns a new hash map using the heap allocator.

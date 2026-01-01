@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string_int.h"
+#include "ft_string.h"
 
 /**
  * @brief Copies the characters from the binary-safe string `src` to `dst`.

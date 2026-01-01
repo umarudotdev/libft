@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ARENA_INT_H
-# define FT_ARENA_INT_H
+#ifndef FT_ARENA_INTERNAL_H
+# define FT_ARENA_INTERNAL_H
 
 # include "ft_arena.h"
 # include <stddef.h>

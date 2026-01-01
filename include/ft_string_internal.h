@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_int.h                                     :+:      :+:    :+:   */
+/*   ft_string_int.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 18:50:43 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:02:40 by martins          ###   ########.fr       */
+/*   Created: 2024/05/28 21:30:23 by martins           #+#    #+#             */
+/*   Updated: 2024/09/14 20:02:43 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STACK_INT_H
-# define FT_STACK_INT_H
+#ifndef FT_STRING_INTERNAL_H
+# define FT_STRING_INTERNAL_H
 
 # include "ft_allocator.h"
-# include "ft_linkedlist.h"
+# include "ft_string.h"
 # include <stddef.h>
 
-struct			s_stack
+struct					s_string_header
 {
-	t_list		*top;
-	size_t		size;
-	t_allocator	allocator;
+	size_t				size;
+	size_t				capacity;
+	t_allocator			allocator;
+	char				buffer[];
 };
+
+struct s_string_header	*ft_stnhdr(const t_string s);
+void					ft_stnsetlen(t_string s, size_t newsize);
+void					ft_stnsetcap(t_string s, size_t newsize);
 
 #endif

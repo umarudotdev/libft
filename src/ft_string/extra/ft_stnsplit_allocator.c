@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stnnew_size_allocator.c                         :+:      :+:    :+:   */
+/*   ft_stnsplit_allocator.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,36 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_arraylist.h"
 #include "ft_string.h"
-#include "ft_string_internal.h"
 #include <stddef.h>
 
 /**
- * @brief Allocates and returns a new binary-safe string with the given size
+ * @brief Splits a string by a character and returns an array of strings
  * using the provided allocator.
  *
  * @param a The allocator to use.
- * @param s The content to create the string with.
- * @param size The size of the string.
- * @return The new string.
+ * @param s The string to split.
+ * @param c The character to split by.
+ * @return The array of strings. NULL if the allocation fails.
  */
-t_string	ft_stnnew_size_allocator(t_allocator a, const char *s, size_t size)
+t_array	*ft_stnsplit_allocator(t_allocator a, const char *s, char c)
 {
-	t_string				stn;
-	static const size_t		header_size = sizeof(struct s_string_header);
-	struct s_string_header	*ptr;
+	t_array		*arr;
+	char		**tmp;
+	size_t		i;
+	t_string	str;
 
-	ptr = ft_alloc(a, header_size + size + 1);
-	if (!ptr)
+	arr = ft_arrnew_allocator(a, sizeof(t_string));
+	if (!arr)
 		return (NULL);
-	ptr->allocator = a;
-	ptr->size = size;
-	ptr->capacity = size;
-	stn = ptr->buffer;
-	if (s)
-		ft_memcpy(stn, s, size);
-	else
-		ft_bzero(stn, size);
-	stn[size] = '\0';
-	return (stn);
+	tmp = ft_split(s, c);
+	if (!tmp)
+		return (ft_arrfree(arr), NULL);
+	i = 0;
+	while (tmp[i] != NULL)
+	{
+		str = ft_stnnew_allocator(a, tmp[i]);
+		if (!str)
+			return (ft_stnfreesplit(arr), ft_freesplit(tmp), NULL);
+		if (!ft_arrappend(arr, &str))
+			return (ft_stnfreesplit(arr), ft_freesplit(tmp), NULL);
+		i++;
+	}
+	ft_freesplit(tmp);
+	return (arr);
 }

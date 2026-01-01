@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_arena.h"
-#include "ft_arena_int.h"
 #include "ft_string.h"
 
 /**

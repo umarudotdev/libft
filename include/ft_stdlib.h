@@ -31,5 +31,6 @@ void		ft_swap(void *a, void *b, size_t size);
 size_t		ft_setrange(ssize_t *start, ssize_t *end, size_t len);
 void		ft_panic(const char *message) __attribute__((noreturn));
 void		*ft_expect(void *ptr, const char *message);
+void		*ft_unwrap(void *ptr);
 
 #endif

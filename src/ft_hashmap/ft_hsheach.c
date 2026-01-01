@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_hashmap.h"
-#include "ft_hashmap_int.h"
 
 /**
  * @brief Iterates over the hash map `hsh` and applies the function `f` to each

@@ -109,7 +109,9 @@ SRCS			:= \
 	ft_string/extra/ft_stntolower.c \
 	ft_string/extra/ft_stntonumeric.c \
 	ft_string/extra/ft_stnsplit.c \
+	ft_string/extra/ft_stnsplit_allocator.c \
 	ft_string/extra/ft_stnsplit_space.c \
+	ft_string/extra/ft_stnsplit_space_allocator.c \
 	ft_string/extra/ft_stnfreesplit.c \
 	ft_string/extra/ft_stnjoin.c \
 	ft_string/extra/ft_stnjoin_range.c \
@@ -134,6 +136,7 @@ SRCS			:= \
 	ft_stdlib/extra/ft_setrange.c \
 	ft_stdlib/extra/ft_panic.c \
 	ft_stdlib/extra/ft_expect.c \
+	ft_stdlib/extra/ft_unwrap.c \
 	\
 	ft_stdio/extra/ft_putchar_fd.c \
 	ft_stdio/extra/ft_putchar.c \

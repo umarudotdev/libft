@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_stdlib.h"
-#include "ft_string_int.h"
+#include "ft_string.h"
 
 /**
  * @brief Compares the bytes of `s1` and `s2`.

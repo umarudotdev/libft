@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arena_int.h"
+#include "ft_arena_internal.h"
 
 /**
  * @brief Allocates memory from a specific arena block.

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_allocator.h"
 #include "ft_arena.h"
 
 static void	*arena_alloc(void *context, size_t size);

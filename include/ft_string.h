@@ -84,7 +84,9 @@ t_string		ft_stntoupper(t_string s);
 t_string		ft_stntolower(t_string s);
 bool			ft_stntonumeric(t_string s);
 t_array			*ft_stnsplit(const char *s, char c);
+t_array			*ft_stnsplit_allocator(t_allocator a, const char *s, char c);
 t_array			*ft_stnsplit_space(const char *s);
+t_array			*ft_stnsplit_space_allocator(t_allocator a, const char *s);
 void			ft_stnfreesplit(t_array *arr);
 t_string		ft_stnjoin(const t_array *arr, const char *s);
 t_string		ft_stnjoin_range(const t_array *arr, const char *s,

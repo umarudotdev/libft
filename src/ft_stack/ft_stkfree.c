@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_stack.h"
-#include "ft_stack_int.h"
+#include "ft_stack_internal.h"
 
 static void	stk_lstclear(t_stack *stk, void (*del)(void *));
 

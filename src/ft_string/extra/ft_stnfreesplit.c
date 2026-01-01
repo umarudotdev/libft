@@ -17,12 +17,14 @@
 /**
  * @brief Frees an array of strings.
  *
- * @param The array to free.
+ * @param arr The array to free.
  */
 void	ft_stnfreesplit(t_array *arr)
 {
 	size_t	i;
 
+	if (!arr)
+		return ;
 	i = 0;
 	while (i < ft_arrsize(arr))
 	{

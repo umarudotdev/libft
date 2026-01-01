@@ -12,7 +12,7 @@
 
 #include "ft_arraylist.h"
 #include "ft_hashmap.h"
-#include "ft_hashmap_int.h"
+#include "ft_hashmap_internal.h"
 
 /**
  * @brief Frees the hash map pointed to by `hsh`.

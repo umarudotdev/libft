@@ -7,11 +7,12 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 16:39:39 by martins           #+#    #+#             */
 /*   Updated: 2024/09/14 20:02:41 by martins          ###   ########.fr       */
-/*                                                                            */
+/*                                                                           */
 /* ************************************************************************** */
 
 #include "ft_stdlib.h"
-#include "ft_string_int.h"
+#include "ft_string.h"
+#include "ft_string_internal.h"
 #include <stddef.h>
 #include <sys/types.h>
 

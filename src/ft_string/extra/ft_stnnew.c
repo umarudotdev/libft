@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string_int.h"
+#include "ft_string.h"
 
 /**
  * @brief Allocates (with malloc(3)) and returns a new binary-safe string.

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_hashmap.h"
-#include "ft_hashmap_int.h"
+#include "ft_hashmap_internal.h"
 
 /**
  * @brief Returns the number of entries in the hash map.

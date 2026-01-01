@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_int.h                                    :+:      :+:    :+:   */
+/*   ft_arraylist_int.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 21:30:23 by martins           #+#    #+#             */
-/*   Updated: 2024/09/14 20:02:43 by martins          ###   ########.fr       */
+/*   Created: 2024/02/29 23:07:28 by martins           #+#    #+#             */
+/*   Updated: 2024/11/16 16:01:29 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STRING_INT_H
-# define FT_STRING_INT_H
+#ifndef FT_ARRAYLIST_INTERNAL_H
+# define FT_ARRAYLIST_INTERNAL_H
 
 # include "ft_allocator.h"
-# include "ft_string.h"
 # include <stddef.h>
 
-struct					s_string_header
-{
-	size_t				size;
-	size_t				capacity;
-	t_allocator			allocator;
-	char				buffer[];
-};
+# define ARRAY_DEFAULT_CAPACITY 16
+# define ARRAY_GROWTH_FACTOR 2
 
-struct s_string_header	*ft_stnhdr(const t_string s);
-void					ft_stnsetlen(t_string s, size_t newsize);
-void					ft_stnsetcap(t_string s, size_t newsize);
+struct			s_array
+{
+	void		*elements;
+	size_t		element_size;
+	size_t		size;
+	size_t		capacity;
+	t_allocator	allocator;
+};
 
 #endif

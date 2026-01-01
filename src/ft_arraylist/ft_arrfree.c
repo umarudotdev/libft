@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_arraylist.h"
-#include "ft_arraylist_int.h"
+#include "ft_arraylist_internal.h"
 
 /**
  * @brief Frees the array pointed to by `arr`.

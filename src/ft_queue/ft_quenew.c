@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_queue.h"
-#include "ft_queue_int.h"
+#include "ft_queue_internal.h"
 
 /**
  * @brief Allocates and returns a new queue using the heap allocator.

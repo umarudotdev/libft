@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_queue.h"
-#include "ft_queue_int.h"
+#include "ft_queue_internal.h"
 
 static void	que_lstclear(t_queue *que, void (*del)(void *));
 
