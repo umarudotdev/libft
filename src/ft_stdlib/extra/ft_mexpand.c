@@ -10,39 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stdlib.h"
+#include "ft_allocator.h"
 #include "ft_string.h"
 #include <stddef.h>
-#include <stdlib.h>
+#include <sys/param.h>
 
 /**
- * @brief Changes the size of the memory block pointed to by `ptr` to `size`.
+ * @brief Changes the size of the memory block pointed to by `ptr`.
  *
- * If `ptr` is NULL, then the call is equivalent to malloc(size).
+ * If `ptr` is NULL, then the call is equivalent to ft_alloc(a, new_size).
  *
- * If `size` is equal to zero, and `ptr` is not NULL, then the call is
- * equivalent to free(ptr).
+ * If `new_size` is equal to zero, and `ptr` is not NULL, then the call is
+ * equivalent to ft_free(a, ptr) and returns NULL.
  *
+ * @param a The allocator to use.
  * @param ptr A pointer to the memory block to expand.
- * @param size The new size of the memory block.
- * @param oldsize The old size of the memory block.
+ * @param old_size The old size of the memory block.
+ * @param new_size The new size of the memory block.
  * @return A pointer to the allocated memory. NULL if an error occurred.
  */
-void	*ft_mexpand(void *ptr, size_t size, size_t oldsize)
+void	*ft_mexpand(t_allocator a, void *ptr, size_t old_size, size_t new_size)
 {
 	void	*new;
 
 	if (!ptr)
-		return (malloc(size));
-	if (size == 0)
+		return (ft_alloc(a, new_size));
+	if (new_size == 0)
 	{
-		free(ptr);
+		ft_free(a, ptr);
 		return (NULL);
 	}
-	new = ft_calloc(size, sizeof(char));
+	new = ft_alloc(a, new_size);
 	if (!new)
 		return (NULL);
-	ft_memcpy(new, ptr, oldsize);
-	free(ptr);
+	ft_memcpy(new, ptr, MIN(old_size, new_size));
+	ft_free(a, ptr);
 	return (new);
 }

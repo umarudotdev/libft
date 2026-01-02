@@ -13,13 +13,15 @@
 #ifndef FT_STDLIB_H
 # define FT_STDLIB_H
 
+# include "ft_allocator.h"
 # include <stddef.h>
 # include <sys/types.h>
 
 int			ft_atoi(const char *nptr);
 long long	ft_atoll(const char *nptr);
 void		*ft_calloc(size_t nmemb, size_t size);
-void		*ft_mexpand(void *ptr, size_t size, size_t oldsize);
+void		*ft_mexpand(t_allocator a, void *ptr, size_t old_size,
+				size_t new_size);
 char		*ft_itoa(int n);
 int			ft_atoi_base(const char *nptr, const char *base);
 char		*ft_itoa_base(int n, const char *base);
