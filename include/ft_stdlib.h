@@ -34,5 +34,11 @@ size_t		ft_setrange(ssize_t *start, ssize_t *end, size_t len);
 void		ft_panic(const char *message) __attribute__((noreturn));
 void		*ft_expect(void *ptr, const char *message);
 void		*ft_unwrap(void *ptr);
+size_t		ft_kb(size_t n);
+size_t		ft_mb(size_t n);
+size_t		ft_gb(size_t n);
+size_t		ft_to_kb(size_t bytes);
+size_t		ft_to_mb(size_t bytes);
+size_t		ft_to_gb(size_t bytes);
 
 #endif

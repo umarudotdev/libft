@@ -35,7 +35,6 @@ struct			s_entry
 	void		*value;
 };
 
-size_t			ft_hshhash(const char *key);
 struct s_entry	*ft_hshfind(const t_hashmap *hsh, const char *key);
 t_hashmap		*ft_hshexpand(t_hashmap *hsh, size_t size);
 

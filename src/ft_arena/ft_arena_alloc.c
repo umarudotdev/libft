@@ -31,6 +31,8 @@ void	*ft_arena_alloc(t_arena arena, size_t size)
 	if (!arena || size == 0)
 		return (NULL);
 	aligned_size = ft_arena_align(size);
+	if (arena->block_capacity == 0)
+		arena->block_capacity = ARENA_DEFAULT_CAPACITY;
 	if (!arena->current)
 		return (ft_arena_alloc_new_block(arena, aligned_size));
 	if (arena->current->size + aligned_size <= arena->current->capacity)

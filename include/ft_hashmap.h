@@ -32,8 +32,10 @@ typedef struct s_hashmap_iterator
 
 typedef size_t				(*t_hash_func)(const char *key);
 
-t_hashmap					*ft_hshnew(t_hash_func hash);
-t_hashmap					*ft_hshnew_allocator(t_allocator a,
+t_hashmap					*ft_hshnew(void);
+t_hashmap					*ft_hshnew_hash(t_hash_func hash);
+t_hashmap					*ft_hshnew_allocator(t_allocator a);
+t_hashmap					*ft_hshnew_hash_allocator(t_allocator a,
 								t_hash_func hash);
 void						ft_hshfree(t_hashmap *hsh);
 size_t						ft_hshsize(const t_hashmap *hsh);
@@ -49,5 +51,6 @@ t_hashmap_iterator			ft_hshbegin(const t_hashmap *hsh);
 bool						ft_hshnext(t_hashmap_iterator *it);
 void						ft_hsheach(t_hashmap *hsh,
 								void (*f)(const char *key, void *value));
+size_t						ft_hshhash(const char *key);
 
 #endif

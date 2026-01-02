@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hshnew.c                                       :+:      :+:    :+:    */
+/*   ft_gb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 15:29:55 by martins           #+#    #+#             */
-/*   Updated: 2024/12/31 00:00:00 by martins          ###   ########.fr       */
+/*   Created: 2026/01/02 00:00:00 by martins           #+#    #+#             */
+/*   Updated: 2026/01/02 00:00:00 by martins          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_hashmap.h"
+#include <stddef.h>
 
 /**
- * @brief Allocates and returns a new hash map using the heap allocator.
+ * @brief Converts gigabytes to bytes.
  *
- * @return The new hash map.
+ * @param n The number of gigabytes.
+ * @return The equivalent number of bytes.
  */
-t_hashmap	*ft_hshnew(void)
+size_t	ft_gb(size_t n)
 {
-	return (ft_hshnew_allocator(ft_heap_allocator()));
+	return (n << 30);
 }

@@ -137,6 +137,12 @@ SRCS			:= \
 	ft_stdlib/extra/ft_panic.c \
 	ft_stdlib/extra/ft_expect.c \
 	ft_stdlib/extra/ft_unwrap.c \
+	ft_stdlib/extra/ft_kb.c \
+	ft_stdlib/extra/ft_mb.c \
+	ft_stdlib/extra/ft_gb.c \
+	ft_stdlib/extra/ft_to_kb.c \
+	ft_stdlib/extra/ft_to_mb.c \
+	ft_stdlib/extra/ft_to_gb.c \
 	\
 	ft_stdio/extra/ft_putchar_fd.c \
 	ft_stdio/extra/ft_putchar.c \
@@ -212,7 +218,9 @@ SRCS			:= \
 	ft_queue/ft_quedequeue.c \
 	\
 	ft_hashmap/ft_hshnew.c \
+	ft_hashmap/ft_hshnew_hash.c \
 	ft_hashmap/ft_hshnew_allocator.c \
+	ft_hashmap/ft_hshnew_hash_allocator.c \
 	ft_hashmap/ft_hshfree.c \
 	ft_hashmap/ft_hshsize.c \
 	ft_hashmap/ft_hshisempty.c \
@@ -266,6 +274,7 @@ SRCS			:= \
 	ft_color/ft_color_parse_hex.c \
 	\
 	ft_arena/ft_arena_new.c \
+	ft_arena/ft_arena_new_capacity.c \
 	ft_arena/ft_arena_free.c \
 	ft_arena/ft_arena_alloc.c \
 	ft_arena/ft_arena_calloc.c \

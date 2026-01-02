@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hshnew.c                                       :+:      :+:    :+:    */
+/*   ft_hshnew_hash.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,9 +15,10 @@
 /**
  * @brief Allocates and returns a new hash map using the heap allocator.
  *
+ * @param hash The hash function to use, or NULL for the default.
  * @return The new hash map.
  */
-t_hashmap	*ft_hshnew(void)
+t_hashmap	*ft_hshnew_hash(t_hash_func hash)
 {
-	return (ft_hshnew_allocator(ft_heap_allocator()));
+	return (ft_hshnew_hash_allocator(ft_heap_allocator(), hash));
 }
