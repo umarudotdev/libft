@@ -20,33 +20,9 @@
 # define BUFFER_SIZE 128
 #endif
 
-static t_string	append_newline(t_string line, size_t *position)
-{
-	line = ft_stncat_size(line, "\n", sizeof(char));
-	if (line)
-		(*position)++;
-	return (line);
-}
-
-static t_string	process_buffer(t_string line, char *buffer, size_t *position)
-{
-	size_t	len;
-
-	len = ft_strcspn(buffer + *position, "\n");
-	line = ft_stncat_size(line, buffer + *position, len);
-	if (line)
-		*position += len;
-	return (line);
-}
-
-static int	read_buffer(int fd, char *buffer, ssize_t *bytes)
-{
-	*bytes = read(fd, buffer, BUFFER_SIZE);
-	if (*bytes <= 0)
-		return (0);
-	buffer[*bytes] = '\0';
-	return (1);
-}
+static int		read_buffer(int fd, char *buffer, ssize_t *bytes);
+static t_string	process_buffer(t_string line, char *buffer, size_t *position);
+static t_string	append_newline(t_string line, size_t *position);
 
 /**
  * @brief Returns a line from the file descriptor `fd`.
@@ -83,5 +59,33 @@ char	*get_next_line(int fd)
 			break ;
 		position = 0;
 	}
+	return (line);
+}
+
+static int	read_buffer(int fd, char *buffer, ssize_t *bytes)
+{
+	*bytes = read(fd, buffer, BUFFER_SIZE);
+	if (*bytes <= 0)
+		return (0);
+	buffer[*bytes] = '\0';
+	return (1);
+}
+
+static t_string	process_buffer(t_string line, char *buffer, size_t *position)
+{
+	size_t	len;
+
+	len = ft_strcspn(buffer + *position, "\n");
+	line = ft_stncat_size(line, buffer + *position, len);
+	if (line)
+		*position += len;
+	return (line);
+}
+
+static t_string	append_newline(t_string line, size_t *position)
+{
+	line = ft_stncat_size(line, "\n", sizeof(char));
+	if (line)
+		(*position)++;
 	return (line);
 }
