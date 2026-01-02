@@ -21,7 +21,7 @@
  * @param dst The string to copy to.
  * @param src The string to copy from.
  * @param size The number of characters to copy.
- * @return The copied string. NULL if the allocation fails.
+ * @return The copied string. `NULL` if the allocation fails.
  */
 t_string	ft_stncpy_size(t_string dst, const char *src, size_t size)
 {

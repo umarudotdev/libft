@@ -21,7 +21,7 @@
  *
  * @param arena The arena to allocate from.
  * @param size The number of bytes to allocate (must be pre-aligned).
- * @return A pointer to the allocated memory, or NULL if allocation failed.
+ * @return A pointer to the allocated memory, or `NULL` if allocation failed.
  */
 void	*ft_arena_alloc_new_block(t_arena arena, size_t size)
 {

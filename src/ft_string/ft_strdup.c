@@ -20,7 +20,7 @@
  * with free(3).
  *
  * @param s The string to be duplicated.
- * @return A pointer to the duplicated string. NULL if the allocation fails.
+ * @return A pointer to the duplicated string. `NULL` if the allocation fails.
  */
 char	*ft_strdup(const char *s)
 {

@@ -21,7 +21,7 @@
  * @param arr A pointer to the array to add the element to.
  * @param new The element to be added to the array.
  * @param index The position to insert the element at.
- * @return A pointer to the added element. NULL if an error occurred.
+ * @return A pointer to the added element. `NULL` if an error occurred.
  */
 void	*ft_arrinsert(t_array *arr, const void *new, size_t index)
 {

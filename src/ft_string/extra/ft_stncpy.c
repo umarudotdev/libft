@@ -17,7 +17,7 @@
  *
  * @param dst The string to copy to.
  * @param src The string to copy from.
- * @return The copied string. NULL if the allocation fails.
+ * @return The copied string. `NULL` if the allocation fails.
  */
 t_string	ft_stncpy(t_string dst, const char *src)
 {

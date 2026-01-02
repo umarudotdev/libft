@@ -24,7 +24,7 @@
  * @param s The separator to use between each string.
  * @param from The start index of the range.
  * @param to The end index of the range.
- * @return The joined string. NULL if the allocation fails.
+ * @return The joined string. `NULL` if the allocation fails.
  */
 t_string	ft_stnjoin_range(const t_array *arr, const char *s, ssize_t from,
 		ssize_t to)

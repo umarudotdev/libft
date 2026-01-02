@@ -20,8 +20,8 @@
  *
  * If the start index is negative, it is converted to a positive value by adding
  * the length of the memory block to it. If the result is still negative, it is
- * set to 0. The same is done for the end index. If the start index is greater
- * than the end index, the function returns 0.
+ * set to `0`. The same is done for the end index. If the start index is greater
+ * than the end index, the function returns `0`.
  *
  * @param start The start index.
  * @param end The end index.

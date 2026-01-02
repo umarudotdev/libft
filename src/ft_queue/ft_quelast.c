@@ -18,7 +18,7 @@
  * @brief Returns the last element of the queue.
  *
  * @param que A pointer to the queue to get the last element from.
- * @return The last element of the queue, NULL if the queue is empty.
+ * @return The last element of the queue, `NULL` if the queue is empty.
  */
 void	*ft_quelast(const t_queue *que)
 {

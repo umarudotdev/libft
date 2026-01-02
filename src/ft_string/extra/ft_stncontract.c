@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_allocator.h"
 #include "ft_string.h"
 #include "ft_string_internal.h"
 #include <stddef.h>
@@ -18,7 +19,7 @@
  * @brief Removes the free space at the end of the binary-safe string `s`.
  *
  * @param s The string to contract.
- * @return The contracted string. NULL if the allocation fails.
+ * @return The contracted string. `NULL` if the allocation fails.
  */
 t_string	ft_stncontract(t_string s)
 {

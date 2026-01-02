@@ -18,16 +18,16 @@
 /**
  * @brief Changes the size of the memory block pointed to by `ptr`.
  *
- * If `ptr` is NULL, then the call is equivalent to ft_alloc(a, new_size).
+ * If `ptr` is `NULL`, then the call is equivalent to ft_alloc(a, new_size).
  *
- * If `new_size` is equal to zero, and `ptr` is not NULL, then the call is
- * equivalent to ft_free(a, ptr) and returns NULL.
+ * If `new_size` is equal to zero, and `ptr` is not `NULL`, then the call is
+ * equivalent to ft_free(a, ptr) and returns `NULL`.
  *
  * @param a The allocator to use.
  * @param ptr A pointer to the memory block to expand.
  * @param old_size The old size of the memory block.
  * @param new_size The new size of the memory block.
- * @return A pointer to the allocated memory. NULL if an error occurred.
+ * @return A pointer to the allocated memory. `NULL` if an error occurred.
  */
 void	*ft_mexpand(t_allocator a, void *ptr, size_t old_size, size_t new_size)
 {

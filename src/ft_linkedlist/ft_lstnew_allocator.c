@@ -17,7 +17,7 @@
  * @brief Allocates and returns a new node using the given allocator.
  *
  * The variable `content` is initialized with the value of the parameter
- * `content`. The variable `next` is initialized to NULL.
+ * `content`. The variable `next` is initialized to `NULL`.
  *
  * @param alloc The allocator to use.
  * @param content The content to create the new node with.

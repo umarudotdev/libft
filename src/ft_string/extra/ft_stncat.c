@@ -17,7 +17,7 @@
  *
  * @param dst The string to append to.
  * @param src The string to be appended.
- * @return The destination string. NULL if the allocation fails.
+ * @return The destination string. `NULL` if the allocation fails.
  */
 t_string	ft_stncat(t_string dst, const char *src)
 {

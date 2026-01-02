@@ -18,11 +18,11 @@
  * characters specified in `set` removed from the beginning and the end of the
  * string.
  *
- * @note Returns NULL if the allocation fails.
+ * @note Returns `NULL` if the allocation fails.
  *
  * @param s1 The string to be trimmed.
  * @param set The reference set of characters to trim.
- * @return The trimmed string. NULL if the allocation fails.
+ * @return The trimmed string. `NULL` if the allocation fails.
  */
 char	*ft_strtrim(char const *s1, char const *set)
 {

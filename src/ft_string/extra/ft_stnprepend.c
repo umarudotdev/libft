@@ -17,7 +17,7 @@
  *
  * @param dst The string to prepend to.
  * @param src The string to be prepended.
- * @return The destination string. NULL if the allocation fails.
+ * @return The destination string. `NULL` if the allocation fails.
  */
 t_string	ft_stnprepend(t_string dst, const char *src)
 {

@@ -21,7 +21,7 @@
  * @param dst The string to prepend to.
  * @param src The string to be prepended.
  * @param size The number of characters to prepend.
- * @return The destination string. NULL if the allocation fails.
+ * @return The destination string. `NULL` if the allocation fails.
  */
 t_string	ft_stnprepend_size(t_string dst, const char *src, size_t size)
 {

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_allocator.h"
 #include "ft_string.h"
 #include "ft_string_internal.h"
 

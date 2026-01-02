@@ -19,7 +19,7 @@
  * representation.
  *
  * @param str The string to be converted.
- * @return The converted value or 0 on error.
+ * @return The converted value or `0` on error.
  */
 int	ft_atoi(const char *nptr)
 {

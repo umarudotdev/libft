@@ -20,7 +20,7 @@
  *
  * @param arr A pointer to the array to expand.
  * @param size The new capacity of the array.
- * @return The expanded array. NULL if the allocation fails.
+ * @return The expanded array. `NULL` if the allocation fails.
  */
 t_array	*ft_arrexpand(t_array *arr, size_t size)
 {

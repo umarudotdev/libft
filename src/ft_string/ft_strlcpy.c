@@ -18,7 +18,7 @@
  * `src` to `dst`, NUL-terminating the result.
  *
  * Takes the full size of the buffer (not just the length) and guarantee to
- * NUL-terminate the result (as long as `size` is larger than 0).
+ * NUL-terminate the result (as long as `size` is larger than `0`).
  *
  * @note A byte for the NUL should be included in `size`.
  *

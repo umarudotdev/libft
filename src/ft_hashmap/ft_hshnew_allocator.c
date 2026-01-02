@@ -17,7 +17,7 @@
 
 /**
  * @brief Allocates and returns a new hash map using the given allocator.
- * If `hash` is NULL, the default hash function will be used.
+ * If `hash` is `NULL`, the default hash function will be used.
  *
  * @param alloc The allocator to use.
  * @param hash The hash function to use.

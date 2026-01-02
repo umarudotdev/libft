@@ -22,7 +22,7 @@
  * @param little The string to be searched for.
  * @param len The maximum number of characters to be searched.
  * @return (If `little` is an empty string, `big` is returned); if `little`
- * occurs nowhere in `big`, NULL is returned; otherwise a pointer to the first
+ * occurs nowhere in `big`, `NULL` is returned; otherwise a pointer to the first
  * character of the first occurrence of `little` is returned.
  */
 char	*ft_strnstr(const char *big, const char *little, size_t len)

@@ -23,7 +23,7 @@ static size_t	count_digits(int n, size_t base_size);
  *
  * @param n The integer to convert.
  * @param base A string representing the base to convert to.
- * @return The string representing the integer. NULL if the allocation fails.
+ * @return The string representing the integer. `NULL` if the allocation fails.
  */
 char	*ft_itoa_base(int n, const char *base)
 {

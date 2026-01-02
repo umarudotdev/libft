@@ -18,15 +18,15 @@
  * @brief Allocates memory for an array of `nmemb` elements of `size` bytes each
  * and returns a pointer to the allocated memory. The memory is set to zero.
  *
- * If `nmemb` or `size` is 0, then returns a unique pointer value that can later
- * be successfully passed to free().
+ * If `nmemb` or `size` is `0`, then returns a unique pointer value that can
+ * later be successfully passed to free().
  *
  * @warning If the multiplication of `nmemb` and `size` would result in integer
  * overflow, then returns an error.
  *
  * @param nmemb The number of elements to allocate.
  * @param size The size of each element.
- * @return A pointer to the allocated memory. NULL if an error ocurred.
+ * @return A pointer to the allocated memory. `NULL` if an error ocurred.
  */
 void	*ft_calloc(size_t nmemb, size_t size)
 {

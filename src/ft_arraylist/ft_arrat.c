@@ -19,7 +19,7 @@
  *
  * @param arr A pointer to the array to be searched.
  * @param index The position of the element.
- * @return A pointer to the element. NULL if an error occurred.
+ * @return A pointer to the element. `NULL` if an error occurred.
  */
 void	*ft_arrat(const t_array *arr, size_t index)
 {

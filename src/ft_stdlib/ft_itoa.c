@@ -22,7 +22,7 @@ static size_t	count_digits(int n);
  * integer received as an argument. Negative numbers must be handled.
  *
  * @param n The integer to convert.
- * @return The string representing the integer. NULL if the allocation fails.
+ * @return The string representing the integer. `NULL` if the allocation fails.
  */
 char	*ft_itoa(int n)
 {

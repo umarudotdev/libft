@@ -23,7 +23,7 @@
  * @param s The string from which to create the substring.
  * @param start The start index of the substring in the string `s`.
  * @param len The maximum length of the substring.
- * @return The substring. NULL if the allocation fails.
+ * @return The substring. `NULL` if the allocation fails.
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

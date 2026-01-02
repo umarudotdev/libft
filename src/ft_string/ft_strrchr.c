@@ -22,8 +22,8 @@
  *
  * @param s The string to be scanned.
  * @param c The character to be located.
- * @return The pointer to the matched character or NULL if the character is not
- * found.
+ * @return The pointer to the matched character or `NULL` if the character is
+ * not found.
  */
 char	*ft_strrchr(const char *s, int c)
 {

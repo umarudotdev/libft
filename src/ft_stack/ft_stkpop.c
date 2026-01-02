@@ -19,7 +19,7 @@
  * @brief Pops an element from the stack.
  *
  * @param stk A pointer to the stack to pop from.
- * @return The element popped from the stack, NULL if the stack is empty.
+ * @return The element popped from the stack, `NULL` if the stack is empty.
  */
 void	*ft_stkpop(t_stack *stk)
 {

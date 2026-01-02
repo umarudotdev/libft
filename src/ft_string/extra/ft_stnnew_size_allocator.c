@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_allocator.h"
 #include "ft_string.h"
 #include "ft_string_internal.h"
 #include <stddef.h>
@@ -32,9 +33,9 @@ t_string	ft_stnnew_size_allocator(t_allocator a, const char *s, size_t size)
 	ptr = ft_alloc(a, header_size + size + 1);
 	if (!ptr)
 		return (NULL);
-	ptr->allocator = a;
 	ptr->size = size;
 	ptr->capacity = size;
+	ptr->allocator = a;
 	stn = ptr->buffer;
 	if (s)
 		ft_memcpy(stn, s, size);

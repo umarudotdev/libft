@@ -22,7 +22,7 @@ static void	set_entry(t_array *entries, struct s_entry *entry, size_t index);
  *
  * @param hsh A pointer to the hash map to expand.
  * @param size The new size of the hash map.
- * @return The expanded hash map. NULL if the allocation fails.
+ * @return The expanded hash map. `NULL` if the allocation fails.
  */
 t_hashmap	*ft_hshexpand(t_hashmap *hsh, size_t size)
 {

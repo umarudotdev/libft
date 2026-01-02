@@ -18,7 +18,7 @@
  *
  * @param lst The address of a pointer to the first link of a list.
  * @param content The content to create the new node with.
- * @return The new node. NULL if the allocation fails.
+ * @return The new node. `NULL` if the allocation fails.
  */
 t_list	*ft_lstaddcontent_front(t_list **lst, void *content)
 {

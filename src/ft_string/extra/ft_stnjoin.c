@@ -19,7 +19,7 @@
  *
  * @param arr The array to join.
  * @param s The separator to use between each string.
- * @return The joined string. NULL if the allocation fails.
+ * @return The joined string. `NULL` if the allocation fails.
  */
 t_string	ft_stnjoin(const t_array *arr, const char *s)
 {

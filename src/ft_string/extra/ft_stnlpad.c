@@ -19,7 +19,7 @@
  * @param s The string to pad.
  * @param size The total size of the string after padding.
  * @param c The character to pad the string with.
- * @return The padded string. NULL if the allocation fails.
+ * @return The padded string. `NULL` if the allocation fails.
  */
 t_string	ft_stnlpad(t_string s, size_t size, char c)
 {

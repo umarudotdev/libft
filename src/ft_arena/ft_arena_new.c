@@ -25,8 +25,8 @@
  * The arena uses lazy allocation: no memory blocks are allocated until the
  * first allocation request is made.
  *
- * @param capacity The capacity of each arena block in bytes. If 0, uses the
- * default capacity of 4096 bytes.
+ * @param capacity The capacity of each arena block in bytes. If `0`, uses the
+ * default capacity.
  * @return A pointer to the new arena, or `NULL` if allocation failed.
  */
 t_arena	ft_arena_new(size_t capacity)

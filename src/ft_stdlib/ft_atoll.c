@@ -20,7 +20,7 @@
  * long representation.
  *
  * @param str The string to be converted.
- * @return The converted value or 0 on error.
+ * @return The converted value or `0` on error.
  */
 long long	ft_atoll(const char *nptr)
 {

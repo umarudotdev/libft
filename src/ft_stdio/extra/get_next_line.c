@@ -31,7 +31,7 @@ static t_string	append_newline(t_string line, size_t *position);
  * descriptor, one line at a time.
  *
  * @param fd The file descriptor to read from.
- * @return The line read. NULL if there is nothing else to read or if an error
+ * @return The line read. `NULL` if there is nothing else to read or if an error
  * occured.
  */
 char	*get_next_line(int fd)

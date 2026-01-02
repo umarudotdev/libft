@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_allocator.h"
 #include "ft_string.h"
 #include "ft_string_internal.h"
 #include <stddef.h>
@@ -19,7 +20,7 @@
  *
  * @param str The string to expand.
  * @param size The new capacity of the string.
- * @return The expanded string. NULL if the allocation fails.
+ * @return The expanded string. `NULL` if the allocation fails.
  */
 t_string	ft_stnexpand(t_string s, size_t size)
 {

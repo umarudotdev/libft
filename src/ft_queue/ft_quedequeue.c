@@ -18,7 +18,7 @@
  * @brief Removes an element from the front of the queue.
  *
  * @param que A pointer to the queue to remove from.
- * @return The element removed from the queue, NULL if the queue is empty.
+ * @return The element removed from the queue, `NULL` if the queue is empty.
  */
 void	*ft_quedequeue(t_queue *que)
 {

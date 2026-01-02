@@ -18,7 +18,7 @@
  * @brief Returns the first element of the queue.
  *
  * @param que A pointer to the queue to get the first element from.
- * @return The first element of the queue, NULL if the queue is empty.
+ * @return The first element of the queue, `NULL` if the queue is empty.
  */
 void	*ft_quefirst(const t_queue *que)
 {

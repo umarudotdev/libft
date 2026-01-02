@@ -21,7 +21,7 @@
  * @param dst The string to append to.
  * @param src The string to be appended.
  * @param size The number of characters to append.
- * @return The destination string. NULL if the allocation fails.
+ * @return The destination string. `NULL` if the allocation fails.
  */
 t_string	ft_stncat_size(t_string dst, const char *src, size_t size)
 {

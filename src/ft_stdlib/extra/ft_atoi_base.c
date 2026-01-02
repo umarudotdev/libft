@@ -20,7 +20,7 @@
  *
  * @param str The string to be converted.
  * @param base A string representing the base to convert to.
- * @return The converted value or 0 on error.
+ * @return The converted value or `0` on error.
  */
 int	ft_atoi_base(const char *nptr, const char *base)
 {

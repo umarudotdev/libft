@@ -22,7 +22,7 @@
  * @param s A pointer to the memory area to be scanned.
  * @param c The character to be located.
  * @param n The number of bytes to be scanned.
- * @return A pointer to the matching byte or NULL if the character does not
+ * @return A pointer to the matching byte or `NULL` if the character does not
  * occur in the given memory area.
  */
 void	*ft_memchr(const void *s, int c, size_t n)

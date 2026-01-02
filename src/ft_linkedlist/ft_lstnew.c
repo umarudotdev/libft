@@ -18,7 +18,7 @@
  * @brief Allocates (with malloc(3)) and returns a new node.
  *
  * The variable `content` is initialized with the value of the parameter
- * `content`. The variable `next` is initialized to NULL.
+ * `content`. The variable `next` is initialized to `NULL`.
  *
  * @param content The content to create the new node with.
  * @return The new node.

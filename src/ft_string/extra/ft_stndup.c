@@ -17,7 +17,7 @@
  * @brief Duplicates the binary safe-string `s`.
  *
  * @param s The string to be duplicated.
- * @return The duplicated string. NULL if the allocation fails.
+ * @return The duplicated string. `NULL` if the allocation fails.
  */
 t_string	ft_stndup(const t_string s)
 {

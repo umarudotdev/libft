@@ -21,7 +21,7 @@
  * @param a The allocator to use.
  * @param s The string to split.
  * @param c The character to split by.
- * @return The array of strings. NULL if the allocation fails.
+ * @return The array of strings. `NULL` if the allocation fails.
  */
 t_array	*ft_stnsplit_allocator(t_allocator a, const char *s, char c)
 {

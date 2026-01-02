@@ -18,7 +18,7 @@
  * @brief Returns the top element of the stack.
  *
  * @param stk A pointer to the stack to peek.
- * @return The last element pushed to the stack. NULL if the stack is empty.
+ * @return The last element pushed to the stack. `NULL` if the stack is empty.
  */
 void	*ft_stkpeek(const t_stack *stk)
 {
