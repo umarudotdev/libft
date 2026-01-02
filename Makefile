@@ -274,7 +274,7 @@ SRCS			:= \
 	ft_color/ft_color_parse_hex.c \
 	\
 	ft_arena/ft_arena_new.c \
-	ft_arena/ft_arena_new_capacity.c \
+	ft_arena/ft_arena_new_size.c \
 	ft_arena/ft_arena_free.c \
 	ft_arena/ft_arena_alloc.c \
 	ft_arena/ft_arena_calloc.c \

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arena_new_capacity.c                            :+:      :+:    :+:   */
+/*   ft_arena_new_size.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -29,7 +29,7 @@
  * @param capacity The initial capacity of the arena in bytes.
  * @return A pointer to the new arena, or `NULL` if allocation failed.
  */
-t_arena	ft_arena_new_capacity(size_t capacity)
+t_arena	ft_arena_new_size(size_t capacity)
 {
 	struct s_arena	*arena;
 

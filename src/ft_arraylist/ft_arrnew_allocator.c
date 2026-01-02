@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_allocator.h"
 #include "ft_arraylist.h"
 #include "ft_arraylist_internal.h"
 #include <stddef.h>

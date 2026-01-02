@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_allocator.h"
 #include "ft_queue.h"
 #include "ft_queue_internal.h"
 #include <stddef.h>

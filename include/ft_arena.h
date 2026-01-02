@@ -25,7 +25,7 @@ typedef struct s_arena_mark
 }						t_arena_mark;
 
 t_arena					ft_arena_new(void);
-t_arena					ft_arena_new_capacity(size_t capacity);
+t_arena					ft_arena_new_size(size_t capacity);
 void					ft_arena_free(t_arena arena);
 void					*ft_arena_alloc(t_arena arena, size_t size);
 void					*ft_arena_calloc(t_arena arena, size_t nmemb,

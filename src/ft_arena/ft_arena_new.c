@@ -27,5 +27,5 @@
  */
 t_arena	ft_arena_new(void)
 {
-	return (ft_arena_new_capacity(0));
+	return (ft_arena_new_size(0));
 }

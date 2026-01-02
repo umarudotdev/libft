@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stknew.c                                       :+:      :+:    :+:   */
+/*   ft_stknew.c                                       :+:      :+:    :+:    */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martins <martins@umaru.dev>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_stack.h"
-#include "ft_stack_internal.h"
 
 /**
  * @brief Allocates and returns a new stack using the heap allocator.
